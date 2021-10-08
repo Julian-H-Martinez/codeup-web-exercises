@@ -8,10 +8,7 @@ var favColor = prompt("What's your favorite color?");
 alert(`Really? ${favColor} is my favorite color too!!!`);
  */
 
-/**
- *
- A product offer can be applied only if a person buys more than 2 items, and the offer has not expired. Premium members do not need to buy a specific amount of products.
- */
+//  Completed second part of exercise   //
 /**
  * You have rented some movies for your kids: The little mermaid (for 3 days), Brother Bear (for 5 days, they love it), and Hercules (1 day, you don't know yet if they're going to like it). If price for a movie per day is $3, how much will you have to pay?
  */
@@ -48,9 +45,18 @@ alert(`Really? ${favColor} is my favorite color too!!!`);
 /**
  *  A student can be enrolled in a class only if the class is not full and the class schedule does not conflict with her current schedule.
  */
+// var classFull = confirm("Is the class full?");
+// var scheduleConflict = confirm("The class is on MWF, do you have any classes during this time?");
+// var canEnroll = !classFull && !scheduleConflict;
+// alert(`You can enroll... ${canEnroll}!`);
 
-var classFull = confirm("Is the class full?");
-var scheduleConflict = confirm("The class is on MWF, do you have any classes during this time?");
-var canEnroll = !classFull && !scheduleConflict;
+/** A product offer can be applied only if a person buys more than 2 items, and the offer has not expired. Premium members do not need to buy a specific amount of products.
+*/
+// var hasMoreThan2 = confirm("Do you have more than 2 items?");
+// var isPremiumMember = confirm("Are you a Premium Member?");
+// var offerExpired = confirm("Has the offer expired?");
+//
+// var applyDiscount = (hasMoreThan2 || isPremiumMember) && !offerExpired;
+//
+// alert(`The discount will be applied...${applyDiscount}!`);
 
-alert(`You can enroll... ${canEnroll}!`);
