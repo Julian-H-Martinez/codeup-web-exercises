@@ -18,8 +18,6 @@ function sayHello(name){
  *
  * console.log 'helloMessage' to check your work
  */
-// var myName = "Julian";
-
 var helloMessage = sayHello("Julian");
 console.log(helloMessage);
 /**
@@ -84,7 +82,7 @@ function calculateTip(tipPercent, billTotal){
 var billTotalPrompt = parseFloat(prompt("What is the bill total?")).toFixed(2);
 var tipPercentPrompt = parseFloat(prompt("What percentage would you like to tip?"));
 var tipDollarAmt = calculateTip(tipPercentPrompt, billTotalPrompt);
-alert(`Your bill is $${billTotalPrompt} and you would like to tip ${tipPercentPrompt}%. 
+alert(`Your bill is $${billTotalPrompt} and you would like to tip ${tipPercentPrompt}%.
 The dollar amount of your tip is $${tipDollarAmt}.`)
 /**
  * TODO:
@@ -100,3 +98,11 @@ The dollar amount of your tip is $${tipDollarAmt}.`)
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+function applyDiscount(itemPrice, discountPercentage){
+    // set up to have discountPercentage converted to decimal and fixed to 2 decimal places
+    discountPercentage = (discountPercentage/100).toFixed(2);
+    var discountAmt = itemPrice * discountPercentage;
+    var newPrice = (itemPrice - discountAmt).toFixed(2);
+    return `We've applied your discount. Your new total is $${newPrice}.`
+}
+console.log(applyDiscount(45.99, 12));
