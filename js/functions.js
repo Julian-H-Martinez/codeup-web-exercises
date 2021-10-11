@@ -18,6 +18,8 @@ function sayHello(name){
  *
  * console.log 'helloMessage' to check your work
  */
+// var myName = "Julian";
+
 var helloMessage = sayHello("Julian");
 console.log(helloMessage);
 /**
@@ -26,7 +28,8 @@ console.log(helloMessage);
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-
+var myName = "Julian";
+sayHello(myName);
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
 var random = Math.floor((Math.random() * 3) + 1);
