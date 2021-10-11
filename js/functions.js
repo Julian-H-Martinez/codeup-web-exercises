@@ -73,7 +73,7 @@ function calculateTip(tipPercent, billTotal){
     //  remove .toFixed(2) to get answer in example
     //  did not .floor it because it would not be accurate
     var tipAmount = (billTotal * tipPercent).toFixed(2);
-    return `The tip amount being given is $${tipAmount}!`;
+    return tipAmount;
 }
 /**
  * TODO:
@@ -81,7 +81,11 @@ function calculateTip(tipPercent, billTotal){
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-
+var billTotalPrompt = parseFloat(prompt("What is the bill total?")).toFixed(2);
+var tipPercentPrompt = parseFloat(prompt("What percentage would you like to tip?"));
+var tipDollarAmt = calculateTip(tipPercentPrompt, billTotalPrompt);
+alert(`Your bill is $${billTotalPrompt} and you would like to tip ${tipPercentPrompt}%. 
+The dollar amount of your tip is $${tipDollarAmt}.`)
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
