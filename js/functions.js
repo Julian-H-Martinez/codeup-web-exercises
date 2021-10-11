@@ -18,7 +18,8 @@ function sayHello(name){
  *
  * console.log 'helloMessage' to check your work
  */
-
+var helloMessage = sayHello("Julian");
+console.log(helloMessage);
 /**
  * TODO:
  * Store your name as a string in a variable named 'myName', and pass that
