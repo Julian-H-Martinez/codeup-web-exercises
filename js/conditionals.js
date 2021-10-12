@@ -24,10 +24,8 @@ function analyzeColor(colorName){
         return "Blue is the color of the sky!";
     }else if(colorName === 'red'){
         return "Strawberries are red!";
-    }else if(colorName === 'cyan'){
-        return "I don't know anything about cyan";
     }else{
-        return `Hmmm, ${colorName} is an interesting color!`;
+        return `I don't know anything about ${colorName}.`;
     }
 }
 console.log(analyzeColor('blue'));
@@ -51,7 +49,17 @@ console.log(analyzeColor(randomColor));
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
-
+switch (randomColor){
+    case 'blue':
+        console.log(`${randomColor.toUpperCase()} is the color of the sky.`)
+        break;
+    case 'red':
+        console.log(`Strawberries are ${randomColor.toUpperCase()}!`);;
+        break;
+    default:
+        console.log(`I don't know anything about ${randomColor}.`);
+        break;
+}
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
