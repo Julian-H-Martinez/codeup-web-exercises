@@ -53,7 +53,7 @@
      */
     function isTwo(num) {
         // console.log(num);    //to check what random num is
-        return num % 2 === 0;
+        return num === 2;
     }
 
     console.log(isTwo(random));
