@@ -70,11 +70,10 @@
      * > calculateTip(0.15, 33.42) // returns 5.013
      */
     function calculateTip(tipPercent, billTotal) {
-        tipPercent = (tipPercent / 100).toFixed(2);
+        var tipAmount = (billTotal * (tipPercent / 100)).toFixed(2);
         console.log(tipPercent);
         //  remove .toFixed(2) to get answer in example
         //  did not .floor it because it would not be accurate
-        var tipAmount = (billTotal * tipPercent).toFixed(2);
         return tipAmount;
     }
 
