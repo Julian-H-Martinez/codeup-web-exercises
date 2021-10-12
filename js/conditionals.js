@@ -21,11 +21,11 @@
  */
 function analyzeColor(colorName){
     if(colorName === 'blue'){
-        return "Blue is the color of the sky!";
+        return alert(`${colorName} is the color of the sky!`);
     }else if(colorName === 'red'){
-        return "Strawberries are red!";
+        return alert(`Strawberries are ${colorName}!`);
     }else{
-        return `I don't know anything about ${colorName}.`;
+        return alert(`I don't know anything about ${colorName}.`);
     }
 }
 console.log(analyzeColor('blue'));
@@ -51,10 +51,10 @@ console.log(analyzeColor(randomColor));
  */
 switch (randomColor){
     case 'blue':
-        console.log(`${randomColor.toUpperCase()} is the color of the sky.`)
+        console.log(`${randomColor.toUpperCase()} is the color of the sky.`);
         break;
     case 'red':
-        console.log(`Strawberries are ${randomColor.toUpperCase()}!`);;
+        console.log(`Strawberries are ${randomColor.toUpperCase()}!`);
         break;
     default:
         console.log(`I don't know anything about ${randomColor}.`);
@@ -66,7 +66,8 @@ switch (randomColor){
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
-
+var leastFavColor = prompt("What is your least favorite color?");
+analyzeColor(leastFavColor);
 /* ########################################################################## */
 
 /**
