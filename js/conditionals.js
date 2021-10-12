@@ -89,28 +89,28 @@
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-// function calculateTotal (luckyNum, totalAmt){
-//     var discountedPrice;
-//     if(luckyNum === 5){
-//         discountedPrice = 0;
-//         return `Your price after discount is $${discountedPrice}.00! Congratulations!!!`;
-//     }else if(luckyNum === 4){
-//         discountedPrice = totalAmt - (.50*totalAmt);
-//         return `Your price after discount is $${discountedPrice.toFixed(2)}!`;
-//     }else if(luckyNum === 3){
-//         discountedPrice = totalAmt - (.35*totalAmt);
-//         return `Your price after discount is $${discountedPrice.toFixed(2)}!`;
-//     }else if(luckyNum === 2){
-//         discountedPrice = totalAmt - (.25*totalAmt);
-//         return `Your price after discount is $${discountedPrice.toFixed(2)}!`;
-//     }else if(luckyNum === 1){
-//         discountedPrice = totalAmt - (.10*totalAmt);
-//         return `Your price after discount is $${discountedPrice.toFixed(2)}!`;
-//     }else{
-//         discountedPrice = totalAmt;
-//         return `Awe shucks, no discount this time. Your total is $${discountedPrice}.`
-//     }
-// }
+function calculateTotal (luckyNum, totalAmt){
+    var discountedPrice;
+    if(luckyNum === 5){
+        discountedPrice = 0;
+        return `Your price after discount is $${discountedPrice}.00! Congratulations!!!`;
+    }else if(luckyNum === 4){
+        discountedPrice = totalAmt - (.50*totalAmt);
+        return `Your price after discount is $${discountedPrice.toFixed(2)}!`;
+    }else if(luckyNum === 3){
+        discountedPrice = totalAmt - (.35*totalAmt);
+        return `Your price after discount is $${discountedPrice.toFixed(2)}!`;
+    }else if(luckyNum === 2){
+        discountedPrice = totalAmt - (.25*totalAmt);
+        return `Your price after discount is $${discountedPrice.toFixed(2)}!`;
+    }else if(luckyNum === 1){
+        discountedPrice = totalAmt - (.10*totalAmt);
+        return `Your price after discount is $${discountedPrice.toFixed(2)}!`;
+    }else{
+        discountedPrice = totalAmt;
+        return `Awe shucks, no discount this time. Your total is $${discountedPrice}.`
+    }
+}
 //
 // console.log(calculateTotal(5, 100)); // returns 100
 // console.log(calculateTotal(4, 100)); // returns 100
@@ -126,8 +126,9 @@
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
-
+var luckyNumber = Math.floor(Math.random() * 6);
+var userBillAmtPrompt = parseFloat(prompt("What was your total bill amount?"));
+alert(calculateTotal(luckyNumber, userBillAmtPrompt));
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
