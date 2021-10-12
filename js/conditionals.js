@@ -19,55 +19,55 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
-function analyzeColor(colorName){
-    if(colorName === 'blue'){
-        return alert(`${colorName} is the color of the sky!`);
-    }else if(colorName === 'red'){
-        return alert(`Strawberries are ${colorName}!`);
-    }else{
-        return alert(`I don't know anything about ${colorName}.`);
-    }
-}
-console.log(analyzeColor('blue'));
-console.log(analyzeColor('red'));
-console.log(analyzeColor('cyan'));
-console.log(analyzeColor('forest green'));
+// function analyzeColor(colorName){
+//     if(colorName === 'blue'){
+//         return alert(`${colorName} is the color of the sky!`);
+//     }else if(colorName === 'red'){
+//         return alert(`Strawberries are ${colorName}!`);
+//     }else{
+//         return alert(`I don't know anything about ${colorName}.`);
+//     }
+// }
+// console.log(analyzeColor('blue'));
+// console.log(analyzeColor('red'));
+// console.log(analyzeColor('cyan'));
+// console.log(analyzeColor('forest green'));
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color every time the page loads)
-var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-var randomColor = colors[Math.floor(Math.random() * colors.length)];
+// var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+// var randomColor = colors[Math.floor(Math.random() * colors.length)];
 /**
  * TODO:
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message every time you refresh the page
  */
-console.log(analyzeColor(randomColor));
+// console.log(analyzeColor(randomColor));
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
-switch (randomColor){
-    case 'blue':
-        console.log(`${randomColor.toUpperCase()} is the color of the sky.`);
-        break;
-    case 'red':
-        console.log(`Strawberries are ${randomColor.toUpperCase()}!`);
-        break;
-    default:
-        console.log(`I don't know anything about ${randomColor}.`);
-        break;
-}
+// switch (randomColor){
+//     case 'blue':
+//         console.log(`${randomColor.toUpperCase()} is the color of the sky.`);
+//         break;
+//     case 'red':
+//         console.log(`Strawberries are ${randomColor.toUpperCase()}!`);
+//         break;
+//     default:
+//         console.log(`I don't know anything about ${randomColor}.`);
+//         break;
+// }
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
-var leastFavColor = prompt("What is your least favorite color?");
-analyzeColor(leastFavColor);
+// var leastFavColor = prompt("What is your least favorite color?");
+// analyzeColor(leastFavColor);
 /* ########################################################################## */
 
 /**
@@ -89,7 +89,35 @@ analyzeColor(leastFavColor);
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+function calculateTotal (luckyNum, totalAmt){
+    var discountedPrice;
+    if(luckyNum === 5){
+        discountedPrice = 0;
+        return `Your price after discount is $${discountedPrice}.00! Congratulations!!!`;
+    }else if(luckyNum === 4){
+        discountedPrice = totalAmt - (.50*totalAmt);
+        return `Your price after discount is $${discountedPrice.toFixed(2)}!`;
+    }else if(luckyNum === 3){
+        discountedPrice = totalAmt - (.35*totalAmt);
+        return `Your price after discount is $${discountedPrice.toFixed(2)}!`;
+    }else if(luckyNum === 2){
+        discountedPrice = totalAmt - (.25*totalAmt);
+        return `Your price after discount is $${discountedPrice.toFixed(2)}!`;
+    }else if(luckyNum === 1){
+        discountedPrice = totalAmt - (.10*totalAmt);
+        return `Your price after discount is $${discountedPrice.toFixed(2)}!`;
+    }else{
+        discountedPrice = totalAmt;
+        return `Awe shucks, no discount this time. Your total is $${discountedPrice}.`
+    }
+}
 
+console.log(calculateTotal(5, 100)); // returns 100
+console.log(calculateTotal(4, 100)); // returns 100
+console.log(calculateTotal(3, 100)); // returns 100
+console.log(calculateTotal(2, 100)); // returns 100
+console.log(calculateTotal(1, 100)); // returns 100
+console.log(calculateTotal(0, 100)); // returns 100
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.

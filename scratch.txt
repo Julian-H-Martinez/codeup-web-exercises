@@ -1,13 +1,16 @@
-var pizzaPreference = prompt("What kind of pizza do you like?");
+Warm-up
+Write the code to include a JavaScript file in an HTML document.
 
-switch(pizzaPreference) {
-    case "pineapple and hot sauce":
-        alert("What a coincidence, that's my favorite!");
+<script src="js/<filename>"></script>
+
+switch (randomColor){
+    case 'blue':
+        console.log(`${randomColor.toUpperCase()} is the color of the sky.`);
         break;
-    case "cheese":
-        alert("Just plain cheese? Okay...");
+    case 'red':
+        console.log(`Strawberries are ${randomColor.toUpperCase()}!`);
         break;
     default:
-        alert(pizzaPreference + " isn't my favorite, but let's order some!");
+        console.log(`I don't know anything about ${randomColor}.`);
         break;
 }
