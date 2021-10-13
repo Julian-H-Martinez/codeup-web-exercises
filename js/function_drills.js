@@ -20,10 +20,15 @@
         var fiveIAm = input/5 == 1;
         return fiveIAm;
     }
-    console.log(isFive(4));
-    console.log(isFive('5'));
-    console.log(isFive(5));
-    console.log(identity(null));
+    //   Make a function named addFive(input) that adds five to some input.
+    function addFive(input){
+        input = parseFloat(input) + 5;
+        return input;
+    }
+    console.log(addFive(4));
+    console.log(addFive('5'));
+    console.log(addFive(5));
+    console.log(addFive(null));
 }) ();
 
 
@@ -31,7 +36,6 @@
 /**
  * Functions using conditionals but not loops or arrays:
 
- Make a function named addFive(input) that adds five to some input.
  Make a function named isMultipleOfFive(input)
  Make a function named isThree(input)
  Make a function named isMultipleOfThree(input)
