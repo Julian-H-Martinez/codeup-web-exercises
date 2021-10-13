@@ -3,12 +3,17 @@
 (function(){
     //   Make a function named isOdd(number)
     function isOdd(number){
-        var oddNum = number % 2 !== 0 ? 'Number is odd.' : 'Number is even';
-        return oddNum;
+        var oddNum = number % 2 !== 0;
+        return `The number is odd: ${oddNum}`;
+    }
+    //   Make a function named isEven(number)
+    function isEven(number){
+        var evenNum = number % 2 === 0
+        return `The number is even: ${evenNum}`;
     }
 
     console.log(isOdd(4));
-    console.log(isOdd(9));
+    console.log(isEven(9));
 }) ();
 
 
@@ -16,7 +21,6 @@
 /**
  * Functions using conditionals but not loops or arrays:
 
- Make a function named isEven(number)
  Make a function named identity(input) that returns the input exactly as provided.
  Make a function named isFive(input)
  Make a function named addFive(input) that adds five to some input.
