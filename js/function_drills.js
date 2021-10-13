@@ -25,10 +25,14 @@
         input = parseFloat(input) + 5;
         return input;
     }
-    console.log(addFive(4));
-    console.log(addFive('5'));
-    console.log(addFive(5));
-    console.log(addFive(null));
+    //   Make a function named isMultipleOfFive(input)
+    function isMultipleOfFive(input){
+        var multipleFive = input % 5 == 0;
+        return multipleFive;
+    }
+    console.log(isMultipleOfFive(4));
+    console.log(isMultipleOfFive('5'));
+    console.log(isMultipleOfFive(5));
 }) ();
 
 
@@ -36,7 +40,6 @@
 /**
  * Functions using conditionals but not loops or arrays:
 
- Make a function named isMultipleOfFive(input)
  Make a function named isThree(input)
  Make a function named isMultipleOfThree(input)
  Make a function named isMultipleOfThreeAndFive(input)
