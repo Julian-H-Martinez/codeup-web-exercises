@@ -1,8 +1,4 @@
-Warm-up
-Write the code to include a JavaScript file in an HTML document.
-
-<script src="js/<filename>"></script>
-
+////////////SWITCH STATEMENT//////////
 switch (randomColor){
     case 'blue':
         console.log(`${randomColor.toUpperCase()} is the color of the sky.`);
@@ -13,4 +9,63 @@ switch (randomColor){
     default:
         console.log(`I don't know anything about ${randomColor}.`);
         break;
+}
+
+//////////////TERNARY OPERATOR//////////////
+'use strict';
+
+var message;
+
+if (success) {
+    message = "Operation was successful.";
+} else {
+    message = "Oops, something went wrong.";
+}
+
+// the above if/else can be re-written as:
+var message = (success) ? "Operation was successful." : "Oops, something went wrong.";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if(enterANumber == true){
+    var numEntered = parseFloat(prompt("Please enter a number."));
+    console.log(numEntered);
+
+    if(numEntered % 2 === 0){
+        alert(`${numEntered} is even.`)
+    }else{
+        alert(`${numEntered} is odd.`)
+    }
+    if(numEntered > 0){
+        alert(`${numEntered} is positive.`)
+    }else{
+        alert(`${numEntered} is negative`)
+    }
+    var plus100 = numEntered + 100;
+    alert(`${numEntered} + 100 is: ${plus100}.`);
 }

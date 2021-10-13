@@ -145,4 +145,19 @@ alert(calculateTotal(luckyNumber, userBillAmtPrompt));
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+var enterANumber = confirm('Would you like to enter a number?');
+if(enterANumber){
+    var numEntered = parseFloat(prompt("Please enter a number."));
+    if(isNaN(numEntered)){
+        alert("Silly guy, please enter a number.")
+    }else{
+        //  using Ternary Operator to check if even/odd & if positive/negative
+        numEntered % 2 === 0 ? alert(`${numEntered} is even`) : alert(`${numEntered} is odd`);
+        numEntered > 0 ? alert(`${numEntered} is positive.`) : alert(`${numEntered} is negative.`);
+        var plus100 = 100 + numEntered;
+        alert(`${numEntered} + 100 is: ${plus100}`);
+    }
+}else{
+    return alert('Maybe next time.')
+}
 })();
