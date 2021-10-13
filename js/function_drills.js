@@ -11,9 +11,14 @@
         var evenNum = number % 2 === 0
         return `The number is even: ${evenNum}`;
     }
-
-    console.log(isOdd(4));
-    console.log(isEven(9));
+    //   Make a function named identity(input) that returns the input exactly as provided.
+    function identity(input){
+        return input;
+    }
+    console.log(identity(4));
+    console.log(identity('Hello world!'));
+    console.log(identity());
+    console.log(identity(null));
 }) ();
 
 
@@ -21,7 +26,6 @@
 /**
  * Functions using conditionals but not loops or arrays:
 
- Make a function named identity(input) that returns the input exactly as provided.
  Make a function named isFive(input)
  Make a function named addFive(input) that adds five to some input.
  Make a function named isMultipleOfFive(input)
