@@ -34,4 +34,23 @@
         var thisIs = randoNum % 2 == 0 ? `${randoNum} is even`:`${randoNum} is odd`;
         console.log(thisIs);
     }
+    /**
+     *Create a for loop that uses console.log to create the output shown below.
+     1
+     22
+     333
+     4444
+     55555
+     666666
+     7777777
+     88888888
+     999999999
+     */
+    for (var i = 1; i < 10; i++){
+        var output = '';
+        for (var j = 0; j < i; j++){
+            output = output + i.toString();
+        }
+        console.log(output);
+    }
 })();
