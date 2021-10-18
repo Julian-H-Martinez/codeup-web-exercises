@@ -36,15 +36,27 @@
      typeCheck(!false * 3);
      typeCheck(4 + ‘4’);
      */
-    function typeCheck(input){
-        if(typeof input === 'string'){
-            return `Ha Ha, this is a string!`
-        }else{
-            return typeof input;
-        }
-    }
-    console.log(typeCheck(''));
-    console.log(typeCheck(isNaN()));
-    console.log(typeCheck(!false * 3));
-    console.log(typeCheck(4 + '4'));
+    // function typeCheck(input){
+    //     if(typeof input === 'string'){
+    //         return `Ha Ha, this is a string!`
+    //     }else{
+    //         return typeof input;
+    //     }
+    // }
+    // console.log(typeCheck(''));
+    // console.log(typeCheck(isNaN()));
+    // console.log(typeCheck(!false * 3));
+    // console.log(typeCheck(4 + '4'));
+
+    /**
+     * Warmups
+     - When writing code to test our tests in TDD it’s important to put
+     yourself in the mindset of a (junior) web developer.
+     This will help you in ensuring that our tests are fully comprehensive.
+     When writing code with tests provided to me, it’s important for me to
+     write code:
+     A. With minimal effectiveness so as to green all the tests.
+     B. With full functionality so as to ensure my function works as intended
+     $$$ C. Both $$$
+     */
 }) ();
