@@ -18,7 +18,10 @@
      * Create log statements that will print each of the names individually by
      * accessing each element's index.
      */
-
+    console.log(names[0]);
+    console.log(names[1]);
+    console.log(names[2]);
+    console.log(names[3]);
     /**
      * TODO:
      * Write some code that uses a for loop to log every item in the names
