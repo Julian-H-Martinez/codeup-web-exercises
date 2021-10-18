@@ -9,6 +9,16 @@
         }
     }
     alert(`Thanks for selecting ${numPick}, which is an odd number!`)
+    console.log(`Number to skip is: ${numPick}`);
+    for(var i = 1; i < 50; i++){
+        if(i % 2 === 0){
+            continue;
+        }else if(i == numPick){
+            console.log(`Yikes! Skipping Number: ${numPick}`);
+            continue;
+        }
+        console.log(`Here is an odd number: ${i}`);
+    }
 })();
 
 
