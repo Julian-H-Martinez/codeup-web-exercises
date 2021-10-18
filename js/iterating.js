@@ -6,13 +6,13 @@
      * Create an array of 4 people's names and store it in a variable called
      * 'names'.
      */
-var names = ["Ol'Head", "Dad", "Coach", "Honey"]
+    var names = ["Ol'Head", "Dad", "Coach", "Honey"]
     /**
      * TODO:
      * Create a log statement that will log the number of elements in the names
      * array.
      */
-
+    console.log(names.length);
     /**
      * TODO:
      * Create log statements that will print each of the names individually by
