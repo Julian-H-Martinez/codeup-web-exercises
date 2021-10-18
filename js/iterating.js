@@ -27,7 +27,9 @@
      * Write some code that uses a for loop to log every item in the names
      * array.
      */
-
+    for(var i = 0; i < names.length; i++){
+        console.log(names[i]);
+    }
     /**
      * TODO:
      * Refactor your above code to use a `forEach` loop
