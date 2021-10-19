@@ -54,6 +54,17 @@
         console.log(output);
     }
     /**
+    var str = "";
+    for (var i = 1; i <= 9; i++){
+        for(var j = 1; g <= h; g++){
+            str += h;
+        }
+        str += "\n";
+    }
+    console.log(str);
+    */
+
+     /**
      * Create a for loop that uses console.log to create the output shown below.
 
      100

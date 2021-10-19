@@ -28,24 +28,35 @@
     }
     console.log(person.sayHello());
     /** TODO:
-     * HEB has an offer for the shoppers that buy products amounting to
-     * more than $200. If a shopper spends more than $200, they get a 12%
-     * discount. Write a JS program, using conditionals, that logs to the
-     * browser, how much Ryan, Cameron and George need to pay. We know that
-     * Cameron bought $180, Ryan $250 and George $320. Your program will have to
-     * display a line with the name of the person, the amount before the
-     * discount, the discount, if any, and the amount after the discount.
+     * HEB has an offer for the shoppers that buy products amounting to more than $200.
+     * If a shopper spends more than $200, they get a 12% discount.
+     * Write a JS program, using conditionals, that logs to the browser, how much Ryan, Cameron and George need to pay.
+     * We know that Cameron bought $180, Ryan $250 and George $320.
+     * Your program will have to display a line with the name of the person, the amount before the discount, the discount, if any, and the amount
+     * after the discount.
      *
      * Uncomment the lines below to create an array of objects where each object
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+    shoppers.totalAmt = function(){
+        if(shoppers.amount > 200){
+            var discountAmt = shoppers.amount*0.12;
+            var amtAfterDiscount = shoppers.amount - discountAmt;
+            return `${shoppers.name}\nAmount Before Discount: ${shoppers.amount}\nYour Discount Is: ${discountAmt}\nYour Total After Discount: ${amtAfterDiscount}`;
+        }else{
+            return `${shoppers.name}\nAmount Before Discount: ${shoppers.amount}\nYour Discount Is: $0\nYour Total After Discount: ${shoppers.amount}`;
+        }
+    }
+    shoppers.forEach(function(shopper){
+        console.log(shopper.totalAmt);
+    })
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
