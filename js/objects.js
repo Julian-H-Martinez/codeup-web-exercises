@@ -45,18 +45,15 @@
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
     ];
-    shoppers.totalAmt = function(){
-        if(shoppers.amount > 200){
-            var discountAmt = shoppers.amount*0.12;
-            var amtAfterDiscount = shoppers.amount - discountAmt;
-            return `${shoppers.name}\nAmount Before Discount: ${shoppers.amount}\nYour Discount Is: ${discountAmt}\nYour Total After Discount: ${amtAfterDiscount}`;
-        }else{
-            return `${shoppers.name}\nAmount Before Discount: ${shoppers.amount}\nYour Discount Is: $0\nYour Total After Discount: ${shoppers.amount}`;
+    shoppers.forEach(function(shopper) {
+        if (shopper.amount > 200) {
+            var discountAmt = shopper.amount * 0.12;
+            var amtAfterDiscount = shopper.amount - discountAmt;
+            console.log(`${shopper.name}\nAmount Before Discount: ${shopper.amount}\nYour Discount Is: ${discountAmt}\nYour Total After Discount: ${amtAfterDiscount}`);
+        } else {
+            console.log(`${shopper.name}\nAmount Before Discount: ${shopper.amount}\nYour Discount Is: $0\nYour Total After Discount: ${shopper.amount}`);
         }
-    }
-    shoppers.forEach(function(shopper){
-        console.log(shopper.totalAmt);
-    })
+    });
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
