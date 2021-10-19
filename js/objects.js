@@ -67,7 +67,46 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-
+    var books = [
+        {
+            title:"Extraordinary Ownership",
+            author:{
+                firstName:"Jocko",
+                lastName:"Willink"
+            }
+        },
+        {
+            title:"The Five Love Languages",
+            author:{
+                firstName: "Gary",
+                lastName: "Chapman"
+            }
+        },
+        {
+            title:"Think Like A Monk",
+            author:{
+                firstName: "Jay",
+                lastName: "Shetty"
+            }
+        },
+        {
+            title:"The Sicilian",
+            author:{
+                firstName: "Mario",
+                lastName: "Puzo"
+            }
+        },
+        {
+            title:"You Were Made to Make a Difference",
+            author:{
+                firstName: "Max",
+                lastName: "Lucado"
+            }
+        },
+    ];
+    console.log(books[0].title);
+    console.log(books[0].author.firstName);
+    console.log(books[0].author.lastName);
     /**
      * TODO:
      * Loop through the books array and output the following information about
