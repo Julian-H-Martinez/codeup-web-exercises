@@ -15,15 +15,15 @@
      allIndexesOf(fruits, "pineapple") should return [4]
      */
 
-    // function allIndexesOf(a, b){
-    //     var arrOfIndex = [], i;
-    //     for(i = 0; i < a.length; i++){
-    //         if(a[i] === b){
-    //             arrOfIndex.push(i);
-    //         }
-    //     }
-    //     return arrOfIndex;
-    // }
+    function allIndexesOf(a, b){
+        var arrOfIndex = [], i;
+        for(i = 0; i < a.length; i++){
+            if(a[i] === b){
+                arrOfIndex.push(i);
+            }
+        }
+        return arrOfIndex;
+    }
     // var fruits = ["apple", "banana", "orange", "apple", "pineapple"];
     // console.log(allIndexesOf(fruits, "apple"));      //  should return the array [0, 3]
     // console.log(allIndexesOf(fruits, "guava"));      //  should return the array []
@@ -40,19 +40,36 @@
      removeAll(bugs, "mosquito") should return ["ant", "scorpion", "ant",   "ant", "typo", "reference error", "type error"]
      removeAll(bugs, "roach") should return the original array b/c "roach" has no occurrances.
      */
-    function removeAll(array, value){
-        var indexToRemove = array.indexOf(value);
-        //  if statement to show if value is in array
-        //  if greater than -1(which is what's returned when index does not exist) then complete action
-        if(indexToRemove > -1){
-            //  action needed to remove value at index
-            array.splice(indexToRemove, 1);
-        }
-        return array;
-    }
-    var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
-    console.log(bugs);
-    console.log(removeAll(bugs, "ant"));         //  should return ["mosquito", "scorpion",   "mosquito", "typo", "reference error", "type error"]
+    /**
+     * Not completed! Need to figure out how to remove all instances of a value in an array
+     * Pressing pause before I throw this computer ---- JK / JK
+     * When I return I will start from scratch and baby step it
+     * Don't forget to console log
+     * Don't forget to use GOOGLE!!!
+     * You're almost there!!!!
+     */
+    // function removeAll(array, value){
+    //     var indexToRemove = allIndexesOf(array, value), i, j;
+    //     console.log(indexToRemove);
+    //     //  if statement to show if value is in array
+    //     //  if greater than -1(which is what's returned when index does not exist) then complete action
+    //     //  creating for loop to remove all indexes of values
+    //     for (i = 0; i < array.length; i++){
+    //         for(j = 0; j < indexToRemove.length; j++){
+    //             if(i === indexToRemove[j]){
+    //                 console.log(array[i] + " I am at index " + i + "!");
+    //                 //  action needed to remove value at index
+    //                 array.splice(array[i], 1);
+    //         }
+    //
+    //         }
+    //     }
+    //     return array;
+    // }
+    // var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
+    // console.log(bugs);
+    // console.log(removeAll(bugs, "ant"));         //  should return ["mosquito", "scorpion",   "mosquito", "typo", "reference error", "type error"]
+    // console.log(bugs);
     // console.log(removeAll(bugs, "mosquito"));    //  should return ["ant", "scorpion", "ant",   "ant", "typo", "reference error", "type error"]
     // console.log(removeAll(bugs, "roach"));       //  should return the original array b/c "roach" has no occurrences.
     //////////////////////////////---FUNCTIONS---/////////////////////////////////////
