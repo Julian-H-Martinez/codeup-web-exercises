@@ -67,16 +67,24 @@
      * For numbers which are multiples of both three and five console.log “FizzBuzz”.
      */
 
-    for(var i = 1; i <= 100; i++){
-        if (i % 15 === 0){
-            console.log("FizzBuzz");
-        }else if(i % 5 === 0){
-            console.log("Buzz");
-        }else if(i % 3 === 0){
-            console.log("Fizz");
-        }else{
-            console.log(i);
-        }
+    // for(var i = 1; i <= 100; i++){
+    //     if (i % 15 === 0){
+    //         console.log("FizzBuzz");
+    //     }else if(i % 5 === 0){
+    //         console.log("Buzz");
+    //     }else if(i % 3 === 0){
+    //         console.log("Fizz");
+    //     }else{
+    //         console.log(i);
+    //     }
+    // }
+    /**
+     * Warmups
+     Create a function named secondToLast that accepts an array as an argument and will return the second to last element of the array.
+     */
+    function secondToLast(arr){
+        return arr[arr.length-2];
     }
 
+    console.log(secondToLast([1, 43, 23, 65, 420]));
 }) ();
