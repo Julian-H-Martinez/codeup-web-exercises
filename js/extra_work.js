@@ -1,5 +1,6 @@
 "use strict";
 (function(){
+    ///////////////////////////---ARRAYS---///////////////////////////
     /**
      * Define a function named allIndexesOf that takes in two arguments.
      * The first argument should be the array to search and the second argument should be the value you want to search for.
@@ -14,17 +15,54 @@
      allIndexesOf(fruits, "pineapple") should return [4]
      */
 
-    function allIndexesOf(a, b){
-        var arrOfIndex = [], i;
-        for(i = 0; i < a.length; i++){
-            if(a[i] === b){
-                arrOfIndex.push(i);
-            }
+    // function allIndexesOf(a, b){
+    //     var arrOfIndex = [], i;
+    //     for(i = 0; i < a.length; i++){
+    //         if(a[i] === b){
+    //             arrOfIndex.push(i);
+    //         }
+    //     }
+    //     return arrOfIndex;
+    // }
+    // var fruits = ["apple", "banana", "orange", "apple", "pineapple"];
+    // console.log(allIndexesOf(fruits, "apple"));      //  should return the array [0, 3]
+    // console.log(allIndexesOf(fruits, "guava"));      //  should return the array []
+    // console.log(allIndexesOf(fruits, "pineapple"));  //  should return [4]
+
+    /**
+     * Define a function named removeAll(array, value) that takes in two arguments.
+     * The first argument should be an array and the second argument should be a value you wish to remove
+
+     Given:
+
+     var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
+     removeAll(bugs, "ant") should return ["mosquito", "scorpion",   "mosquito", "typo", "reference error", "type error"]
+     removeAll(bugs, "mosquito") should return ["ant", "scorpion", "ant",   "ant", "typo", "reference error", "type error"]
+     removeAll(bugs, "roach") should return the original array b/c "roach" has no occurrances.
+     */
+    function removeAll(array, value){
+        var indexToRemove = array.indexOf(value);
+        //  if statement to show if value is in array
+        //  if greater than -1(which is what's returned when index does not exist) then complete action
+        if(indexToRemove > -1){
+            //  action needed to remove value at index
+            array.splice(indexToRemove, 1);
         }
-        return arrOfIndex;
+        return array;
     }
-    var fruits = ["apple", "banana", "orange", "apple", "pineapple"];
-    console.log(allIndexesOf(fruits, "apple"));      //  should return the array [0, 3]
-    console.log(allIndexesOf(fruits, "guava"));      //  should return the array []
-    console.log(allIndexesOf(fruits, "pineapple"));  //  should return [4]
+    var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
+    console.log(bugs);
+    console.log(removeAll(bugs, "ant"));         //  should return ["mosquito", "scorpion",   "mosquito", "typo", "reference error", "type error"]
+    // console.log(removeAll(bugs, "mosquito"));    //  should return ["ant", "scorpion", "ant",   "ant", "typo", "reference error", "type error"]
+    // console.log(removeAll(bugs, "roach"));       //  should return the original array b/c "roach" has no occurrences.
+    //////////////////////////////---FUNCTIONS---/////////////////////////////////////
+    /**
+     * Make a function named isOdd(number)
+     */
+    function isOdd(num){
+        return num % 2 !== 0;
+    }
+    // console.log(isOdd(3));
+    // console.log(isOdd(36));
+    // console.log(isOdd(23));
 })();
