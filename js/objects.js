@@ -131,7 +131,9 @@
      *      ---
      *      ...
      */
-
+    books.forEach(function(book, index){
+        console.log(`Book #${index + 1}\nTitle: ${book.title}\nAuthor: ${book.author.firstName} ${book.author.lastName}`)
+    })
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
