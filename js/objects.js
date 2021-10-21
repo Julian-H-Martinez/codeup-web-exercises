@@ -140,9 +140,48 @@
      *   name and returns a book object with the properties described
      *   previously. Refactor your code that creates the books array to instead
      *   use your function.
-     * - Create a function named `showBookInfo` that accepts a book object and
-     *   outputs the information described above. Refactor your loop to use your
-     *   `showBookInfo` function.
      */
+
+    /**
+     * Working on createBook function;
+     * need to remove lines 164-167
+     * believe I may have figured it out
+     * possibly need to have showInfo inside createBook function
+     * @param title
+     * @param author
+     */
+
+    function createBook(title, author){
+        var splitName = author.split(' ');
+        var books = {
+            title: title,
+            author: {
+                firstName: splitName[0],
+                lastName: splitName[splitName.length-1]
+            }
+        }
+
+        this.title = title;
+        this.author.firstName = splitName[0];
+        this.author.lastName = splitName[splitName.length-1];
+        this.showBookInfo = function(){
+            return `${this.title} written by ${this.authorFirstName} ${this.authorLastName}!`;
+        }
+
+    }
+    // var book1 = books("Goodnight Moon", "Margaret Brown");
+    // console.log(book1.showBookInfo());
+    // console.log(createBook("Goodnight Moon", "Margaret Brown"));
+    // console.log(createBook("The Very Hungry Caterpillar", "Eric Carle"));
+    // console.log(createBook("Where the Wild Things Are", "Maurice Sendak"));
+    // console.log(createBook("The Cat in the Hat", "Dr. Seuss"));
+    // console.log(createBook("Charlotte's Web", "E.B. Hello White"));
+    // console.log(bookInventory);
+    /**
+     * Create a function named `showBookInfo` that accepts a book object and
+     * outputs the information described above. Refactor your loop to use your
+     * `showBookInfo` function.
+     */
+
 
 })();
