@@ -82,9 +82,33 @@
      * Warmups
      Create a function named secondToLast that accepts an array as an argument and will return the second to last element of the array.
      */
-    function secondToLast(arr){
-        return arr[arr.length-2];
+    // function secondToLast(arr){
+    //     return arr[arr.length-2];
+    // }
+    //
+    // console.log(secondToLast([1, 43, 23, 65, 420]));
+    /**
+     * Warmups
+     Write a function named ‘moveToEnd’ that takes in an array, and returns the array with the original first index moved to the last index of the array.
+
+     Example:
+     moveToEnd([1, 2, 3, 4]) 		  // returns [2, 3, 4, 1];
+     moveToEnd([‘roll’, ‘rock’, ‘and’]  // returns [‘rock’, ‘and’, ‘roll’];
+     */
+    function moveToEnd(arr){
+        var elemRemoved = arr.shift();
+        arr.push(elemRemoved);
+        return arr;
     }
 
-    console.log(secondToLast([1, 43, 23, 65, 420]));
+    console.log(moveToEnd([1, 2, 3, 4])); 		  // returns [2, 3, 4, 1];
+    console.log(moveToEnd(["roll", "rock", "and"]));
+
+    /**
+     * function moveToEnd(arr){
+     *     var removedElem = arr.shift();
+     *     arr.push(removedElem);
+     *     return arr;
+     * }
+     */
 }) ();
