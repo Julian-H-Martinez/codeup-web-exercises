@@ -67,46 +67,46 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-    var books = [
-        {
-            title:"Extraordinary Ownership",
-            author:{
-                firstName:"Jocko",
-                lastName:"Willink"
-            }
-        },
-        {
-            title:"The Five Love Languages",
-            author:{
-                firstName: "Gary",
-                lastName: "Chapman"
-            }
-        },
-        {
-            title:"Think Like A Monk",
-            author:{
-                firstName: "Jay",
-                lastName: "Shetty"
-            }
-        },
-        {
-            title:"The Sicilian",
-            author:{
-                firstName: "Mario",
-                lastName: "Puzo"
-            }
-        },
-        {
-            title:"You Were Made to Make a Difference",
-            author:{
-                firstName: "Max",
-                lastName: "Lucado"
-            }
-        },
-    ];
-    console.log(books[0].title);
-    console.log(books[0].author.firstName);
-    console.log(books[0].author.lastName);
+    // var books = [
+    //     {
+    //         title:"Extraordinary Ownership",
+    //         author:{
+    //             firstName:"Jocko",
+    //             lastName:"Willink"
+    //         }
+    //     },
+    //     {
+    //         title:"The Five Love Languages",
+    //         author:{
+    //             firstName: "Gary",
+    //             lastName: "Chapman"
+    //         }
+    //     },
+    //     {
+    //         title:"Think Like A Monk",
+    //         author:{
+    //             firstName: "Jay",
+    //             lastName: "Shetty"
+    //         }
+    //     },
+    //     {
+    //         title:"The Sicilian",
+    //         author:{
+    //             firstName: "Mario",
+    //             lastName: "Puzo"
+    //         }
+    //     },
+    //     {
+    //         title:"You Were Made to Make a Difference",
+    //         author:{
+    //             firstName: "Max",
+    //             lastName: "Lucado"
+    //         }
+    //     },
+    // ];
+    // console.log(books[0].title);
+    // console.log(books[0].author.firstName);
+    // console.log(books[0].author.lastName);
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -131,15 +131,18 @@
      *      ---
      *      ...
      */
-    books.forEach(function(book, index){
-        console.log(`Book #${index + 1}\nTitle: ${book.title}\nAuthor: ${book.author.firstName} ${book.author.lastName}`)
-    })
+    // books.forEach(function(book, index){
+    //     console.log(`Book #${index + 1}\nTitle: ${book.title}\nAuthor: ${book.author.firstName} ${book.author.lastName}`)
+    // })
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
      *   name and returns a book object with the properties described
      *   previously. Refactor your code that creates the books array to instead
      *   use your function.
+     * - Create a function named `showBookInfo` that accepts a book object and
+     *  outputs the information described above. Refactor your loop to use your
+     *  `showBookInfo` function.
      */
 
     /**
@@ -150,38 +153,45 @@
      * @param title
      * @param author
      */
-
+    var books = [];
     function createBook(title, author){
         var splitName = author.split(' ');
-        var books = {
+        var newBook = {
             title: title,
             author: {
                 firstName: splitName[0],
                 lastName: splitName[splitName.length-1]
             }
         }
-
-        this.title = title;
-        this.author.firstName = splitName[0];
-        this.author.lastName = splitName[splitName.length-1];
-        this.showBookInfo = function(){
-            return `${this.title} written by ${this.authorFirstName} ${this.authorLastName}!`;
-        }
-
+        books.push(newBook);
+        return newBook;
     }
+    function showBookInfo(book){
+        books.displayInfo = function(){
+            console.log(`Book \nTitle: ${books.title}\nAuthor: "getting their name"`);
+        }
+        return books.displayInfo();
+    }
+    var myBook = books[0];
+    showBookInfo(myBook);
+
+    /**
+     * newBook.showBookInfo = function(){
+            var displayInfo = `${this.title} written by ${this.author.firstName} ${this.author.lastName}!`;
+            console.log(displayInfo);
+            return displayInfo;
+        }
+     */
+    // books.forEach(function(book){
+    //
+    // })
+
     // var book1 = books("Goodnight Moon", "Margaret Brown");
     // console.log(book1.showBookInfo());
-    // console.log(createBook("Goodnight Moon", "Margaret Brown"));
-    // console.log(createBook("The Very Hungry Caterpillar", "Eric Carle"));
+    console.log(createBook("Goodnight Moon", "Margaret Brown"));
+    console.log(createBook("The Very Hungry Caterpillar", "Eric Carle"));
     // console.log(createBook("Where the Wild Things Are", "Maurice Sendak"));
     // console.log(createBook("The Cat in the Hat", "Dr. Seuss"));
     // console.log(createBook("Charlotte's Web", "E.B. Hello White"));
-    // console.log(bookInventory);
-    /**
-     * Create a function named `showBookInfo` that accepts a book object and
-     * outputs the information described above. Refactor your loop to use your
-     * `showBookInfo` function.
-     */
-
-
+    console.log(books);
 })();
