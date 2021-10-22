@@ -25,6 +25,7 @@
      */
     person.sayHello = function(){
         return `What's happening ${person.firstName} ${person.lastName}!`;
+        // return `What's happening ${this.firstName} ${this.lastName}!`;
     }
     console.log(person.sayHello());
     /** TODO:
