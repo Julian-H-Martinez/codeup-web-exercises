@@ -25,7 +25,7 @@
      */
     person.sayHello = function(){
         return `What's happening ${person.firstName} ${person.lastName}!`;
-        // return `What's happening ${this.firstName} ${this.lastName}!`;
+        // return `What's happening ${this.firstName} ${this.lastName}!`;   //  using 'this' keyword
     }
     console.log(person.sayHello());
     /** TODO:
@@ -141,9 +141,6 @@
      *   name and returns a book object with the properties described
      *   previously. Refactor your code that creates the books array to instead
      *   use your function.
-     * - Create a function named `showBookInfo` that accepts a book object and
-     *  outputs the information described above. Refactor your loop to use your
-     *  `showBookInfo` function.
      */
 
     /**
@@ -151,6 +148,9 @@
      * need to remove lines 164-167
      * believe I may have figured it out
      * possibly need to have showInfo inside createBook function
+     *
+     * Was on the right path after calling through walk through.
+     * Learning point(debug) placement of where we call items will effect if a called function works or not.
      * @param title
      * @param author
      */
@@ -164,35 +164,23 @@
                 lastName: splitName[splitName.length-1]
             }
         }
-        books.push(newBook);
-        return newBook;
+        return books.push(newBook);
     }
-    function showBookInfo(book){
-        books.displayInfo = function(){
-            console.log(`Book \nTitle: ${books.title}\nAuthor: "getting their name"`);
-        }
-        return books.displayInfo();
-    }
-    var myBook = books[0];
-    showBookInfo(myBook);
-
+    createBook("Goodnight Moon", "Margaret Brown");
+    createBook("The Very Hungry Caterpillar", "Eric Carle");
+    createBook("Where the Wild Things Are", "Maurice Sendak");
+    createBook("The Cat in the Hat", "Dr. Seuss");
+    createBook("Charlotte's Web", "E.B. Hello White");
     /**
-     * newBook.showBookInfo = function(){
-            var displayInfo = `${this.title} written by ${this.author.firstName} ${this.author.lastName}!`;
-            console.log(displayInfo);
-            return displayInfo;
-        }
+     * - Create a function named `showBookInfo` that accepts a book object and
+     *  outputs the information described above. Refactor your loop to use your
+     *  `showBookInfo` function.
      */
-    // books.forEach(function(book){
-    //
-    // })
+    function showBookInfo(books){
+        books.forEach(function(book, index){
+            console.log(`Book #${index + 1}\nTitle: ${book.title}\nAuthor: ${book.author.firstName} ${book.author.lastName}`)
+        })
 
-    // var book1 = books("Goodnight Moon", "Margaret Brown");
-    // console.log(book1.showBookInfo());
-    console.log(createBook("Goodnight Moon", "Margaret Brown"));
-    console.log(createBook("The Very Hungry Caterpillar", "Eric Carle"));
-    // console.log(createBook("Where the Wild Things Are", "Maurice Sendak"));
-    // console.log(createBook("The Cat in the Hat", "Dr. Seuss"));
-    // console.log(createBook("Charlotte's Web", "E.B. Hello White"));
-    console.log(books);
+    }
+    showBookInfo(books);
 })();
