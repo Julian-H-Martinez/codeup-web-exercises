@@ -49,6 +49,7 @@
      * You're almost there!!!!
      */
     // function removeAll(array, value){
+    //     console.log(array);
     //     var indexToRemove = allIndexesOf(array, value), i, j;
     //     console.log(indexToRemove);
     //     //  if statement to show if value is in array
