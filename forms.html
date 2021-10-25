@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register With Us</title>
+</head>
+<body>
+<!--  <form action="https://request-inspector.glitch.me/" method="post">-->
+  <form action="https://www.elformo.com/forms/b19143fa-8dc0-4715-8e79-2eff538fa242" method="post" accept-charset="UTF-8">
+<!--Create text fields for email and password with appropriate placeholder values.-->
+      <label for="useremail">Email</label>
+      <input type="email" id="useremail" name="useremail" placeholder="username@mail.com"><br>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="bCreative :)"><br>
+<!--Create a textarea named "bio". This is for the user to fill out a short description of themselves.-->
+      <label for="bio">Tell Us About Yourself</label><br>
+      <textarea name="bio" id="bio" cols="30" rows="10"></textarea><br>
+<!--
+Create a "How did you hear about us" section that contains radio buttons.
+The values should be "billboard", "radio advertisement", "internet advertisement", and "other".
+Only one of the values should be allowed to be selected at a time.
+What happens if the inputs are given different name attributes?
+Change these inputs so that multiple answers are allowed to be selected.
+-->
+      <p>How Did You Hear About Us?</p>
+      <input type="radio" name="marketing" id="billboard" value="billboard">
+      <label for="billboard">Billboard</label>
+
+      <input type="radio" name="marketing" id="radio" value="radio">
+      <label for="radio">Radio</label>
+
+      <input type="radio" name="marketing" id="newspaper" value="newspaper">
+      <label for="newspaper">Newspaper</label>
+
+      <input type="radio" name="marketing" id="google" value="google">
+      <label for="google">Google</label>
+      <br>
+<!--
+Create a dropdown that asks the user what web browser they are using.
+-->
+      <p>What browser are you using:
+      <select name="browser" id="browser">
+          <option value="" disabled selected>--Please Select One--</option>
+          <option value="google">Google</option>
+          <option value="firefox">Firefox</option>
+          <option value="Safari">Safari</option>
+          <option value="aol">AOL</option>
+      </select></p>
+    <p><button>Submit</button></p>
+  </form>
+</body>
+</html>
