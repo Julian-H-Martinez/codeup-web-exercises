@@ -95,14 +95,14 @@
      moveToEnd([1, 2, 3, 4]) 		  // returns [2, 3, 4, 1];
      moveToEnd([‘roll’, ‘rock’, ‘and’]  // returns [‘rock’, ‘and’, ‘roll’];
      */
-    function moveToEnd(arr){
-        var elemRemoved = arr.shift();
-        arr.push(elemRemoved);
-        return arr;
-    }
-
-    console.log(moveToEnd([1, 2, 3, 4])); 		  // returns [2, 3, 4, 1];
-    console.log(moveToEnd(["roll", "rock", "and"]));
+    // function moveToEnd(arr){
+    //     var elemRemoved = arr.shift();
+    //     arr.push(elemRemoved);
+    //     return arr;
+    // }
+    //
+    // console.log(moveToEnd([1, 2, 3, 4])); 		  // returns [2, 3, 4, 1];
+    // console.log(moveToEnd(["roll", "rock", "and"]));
 
     /**
      * function moveToEnd(arr){
@@ -111,4 +111,98 @@
      *     return arr;
      * }
      */
+
+    /**
+     * Warmup
+     Visit https://www.pokemon.com/us/pokedex/ and select one of your favorite pokemon (it can be whatever you choose) and
+     create an object variable to represent the chosen pokemon. The more information you have, the better!
+     We will be using this for lecture today.
+     */
+
+    var ursaringPokemon = {
+        id: 217,
+        name: "Ursaring",
+        height: {
+            feet: 5,
+            inches: 11,
+        },
+        description: ['In the forests inhabited by Ursaring, it is said that there are many streams and towering trees where they gather food.' +
+        ' This Pokémon walks through its forest gathering food every day.', '']
+    }
+
+    var medititePokemon = {
+        id: 307,
+        name: "Meditite",
+        height: {
+            feet: 2,
+            inches: 0,
+        },
+        description: ['Meditite heightens its inner energy through meditation. ' +
+            'It survives on just one berry a day. Minimal eating is another aspect of this Pokémon’s training.',
+            'Meditite undertakes rigorous mental training deep in the mountains. However, whenever it meditates, ' +
+            'this Pokémon always loses its concentration and focus. As a result, its training never ends.'],
+    }
+    var copperajahPokemon = {
+        id: 879,
+        name: "Copperajah",
+        height: {
+            feet: 9,
+            inches: 10,
+        },
+        description: ['They came over from another region long ago and worked together with humans. Their green skin is resistant to water.',
+            'These Pokémon live in herds. Their trunks have incredible grip strength, strong enough to crush giant rocks into powder.'],
+    }
+    var throhPokemon = {
+        id: 538,
+        name: "Throh",
+        height: {
+            feet: 4,
+            inches: 3,
+        },
+        description: ['It performs throwing moves with first-rate skill. Over the course of many battles, ' +
+        'Throh’s belt grows darker as it absorbs its wearer’s sweat.', 'They train in groups of five. Any member that can’t keep up will discard' +
+        ' its belt and leave the group.'],
+    }
+    var inteleonPokemon = {
+        id: 818,
+        name: "Inteleon",
+        height: {
+            feet: 6,
+            inches: 3,
+        },
+        description: ['It has many hidden capabilities, such as fingertips that can shoot water and a membrane on its back that it can use to' +
+        ' glide through the air.', 'Its nictitating membranes let it pick out foes’ weak points so it can precisely blast them with water that' +
+        ' shoots from its fingertips at Mach 3.'],
+    }
+    var eldegossPokemon = {
+        id: 830,
+        name: "Eldegoss",
+        height: {
+            feet: 1,
+            inches: 8,
+        },
+        description: ['The seeds attached to its cotton fluff are full of nutrients. It spreads them on the wind so that plants and other Pokémon' +
+        ' can benefit from them.', 'The cotton on the head of this Pokémon can be spun into a glossy, gorgeous yarn—a Galar regional specialty.'],
+    }
+    var cameruptPokemon = {
+        id: 323,
+        name: "Camerupt",
+        height: {
+            feet: 6,
+            inches: 3,
+        },
+        description: ['Camerupt has a volcano inside its body. Magma of 18,000 degrees Fahrenheit courses through its body. Occasionally, the' +
+        ' humps on this Pokémon’s back erupt, spewing the superheated magma.', 'The humps on Camerupt’s back are formed by a transformation of its' +
+        ' bones. They sometimes blast out molten magma. This Pokémon apparently erupts often when it is enraged.'],
+    }
+    var roggenrolaPokemon = {
+        id: 524,
+        name: "Roggenrola",
+        height: {
+            feet: 1,
+            inches: 4,
+        },
+        description: ['It’s as hard as steel, but apparently a long soak in water will cause it to soften a bit.', 'When it detects a noise, it' +
+        ' starts to move. The energy core inside it makes this Pokémon slightly warm to the touch.'],
+    }
 }) ();
