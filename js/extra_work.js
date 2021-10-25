@@ -80,6 +80,54 @@
     function isOdd(num){
         return num % 2 !== 0;
     }
+    /**
+     * Make a function named isEven(number)
+     */
+    function isEven(num){
+        return !isOdd(num);
+    }
+    /**
+     * Make a function named identity(input) that returns the input exactly as provided.
+     */
+    function identity(input){
+        return input;
+    }
+    /**
+     * Make a function named isFive(input)
+     */
+    function isFive(input){
+        return input == 5;
+    }
+    /**
+     * Make a function named addFive(input) that adds five to some input.
+     */
+    function addFive(input){
+        return parseFloat(input) + 5;
+    }
+    /**
+     * Make a function named isMultipleOfFive(input)
+     */
+    function isMultipleOfFive(input){
+        return parseFloat(input) % 5 == 0;
+    }
+    // console.log(isMultipleOfFive(155));
+    // console.log(isMultipleOfFive("155"));
+    // console.log(isMultipleOfFive(18));
+    // console.log(isMultipleOfFive(-425));
+    // console.log(addFive(5));
+    // console.log(addFive('5'));
+    // console.log(addFive('hello world'));
+    // console.log(isFive(5));
+    // console.log(isFive(-5));
+    // console.log(isFive('-5'));
+    // console.log(isFive(33));
+    // console.log(isFive('hello world'));
+    // console.log(identity(2));
+    // console.log(identity('Hello World'));
+    // console.log(identity(true));
+    // console.log(isEven(3));
+    // console.log(isEven(22));
+    // console.log(isEven('23'));
     // console.log(isOdd(3));
     // console.log(isOdd(36));
     // console.log(isOdd(23));
