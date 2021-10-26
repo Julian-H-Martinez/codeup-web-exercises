@@ -242,5 +242,18 @@
         return canukWrestlers;
     }
 
+    /**
+     * David's Solution
+     * function filterForCanadians(arr){
+     *     var bucket = [];
+     *     arr.forEach(function (element){
+     *         if(element.nationality === 'Canadian'){
+     *             bucket.push(element);
+     *         }
+     *     });
+     *     return bucket;
+     * }
+     */
+
     console.log(canukWrestler(wrestlers));
 }) ();
