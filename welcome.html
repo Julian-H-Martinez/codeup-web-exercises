@@ -7,11 +7,15 @@ Add a class of "fancy-header" to your h1 element, and create an embedded stylesh
 creating the embedded stylesheet?"RED" Remove the style attribute from your h1 and view the page again. "BLUE"
 -->
 <!--Stylesheet-->
+<!--
     <style>
         .fancy-header{
             color: blue;
         }
     </style>
+-->
+<!--include a link to css stylesheet in your html document-->
+    <link rel="stylesheet" href="css/style.css">
     <title>Welcome</title>
 </head>
 <body>
@@ -98,9 +102,13 @@ Use semantic elements for the layout.
 <!--
 CSS I Exercise
 
-Create a directory named css in your project. Within this directory, create a file named style.css, and include a link to it in your html document.
-Inside of style.css, copy the above css, but change to font color to purple. What color is the h1 after making this change? Remove your embedded
-stylesheet and view the page again.
-What do the above exercises tell you about the precedence of style attributes and embedded and external stylesheets?
-Remove any style attributes and embedded stylesheets. From this point forward, we will only be working with external stylesheets.
+Create a directory named css in your project.
+Within this directory, create a file named style.css.
+What color is the h1 after making this change? "PURPLE"
+Remove your embedded stylesheet and view the page again.
+What do the above exercises tell you about the precedence of style attributes and
+embedded and external stylesheets?
+external > (embedded > inline)
+Remove any style attributes and embedded stylesheets.
+From this point forward, we will only be working with external stylesheets.
 -->
