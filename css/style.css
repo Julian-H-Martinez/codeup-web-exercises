@@ -2,6 +2,21 @@
 Inside of style.css, copy the above css, but
 change to font color to purple.
  */
+h1{
+    color: darkolivegreen;
+    border: darkkhaki solid 2px;
+}
+#container h1{
+    color: deeppink;
+    border: none;
+}
 .fancy-header{
     color: purple;
 }
+/*#container>h1{*/
+/*    color: cadetblue;*/
+/*    border: none;*/
+/*}*/
+/**
+
+ */
