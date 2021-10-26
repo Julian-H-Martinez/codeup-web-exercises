@@ -205,4 +205,42 @@
         description: ['It’s as hard as steel, but apparently a long soak in water will cause it to soften a bit.', 'When it detects a noise, it' +
         ' starts to move. The energy core inside it makes this Pokémon slightly warm to the touch.'],
     }
+    /**
+     * Warmups
+     Create a function that accepts an array as an argument, and that returns an array of objects that have a nationality property of “Canadian”.
+     */
+    //  Use the following array:
+        var wrestlers = [
+            {
+                name: "Bret Hart",
+                nationality: "Canadian"
+            }, {
+                name: "Shawn Michaels",
+                nationality: "American"
+            }, {
+                name: "Christian Cage",
+                nationality: "Canadian"
+            }, {
+                name: "Keiji Mutoh",
+                nationality: "Japanese"
+            }, {
+                name: "Eddy Guerrero",
+                nationality: "American"
+            }, {
+                name: "Owen Hart",
+                nationality: "Canadian"
+            }
+        ];
+    function canukWrestler(array){
+        var canukWrestlers = [], i;
+        for(i = 0; i < array.length; i++){
+            if(array[i].nationality !== 'Canadian'){
+                continue;
+            }
+            canukWrestlers.push(array[i]);
+        }
+        return canukWrestlers;
+    }
+
+    console.log(canukWrestler(wrestlers));
 }) ();
