@@ -1,0 +1,9 @@
+h1{
+    color: darkred;
+}
+#container>h1{
+    color: cadetblue;
+}
+.fancy-header{
+    color: royalblue;
+}
