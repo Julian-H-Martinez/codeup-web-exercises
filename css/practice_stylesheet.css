@@ -4,6 +4,15 @@ h1{
 #container>h1{
     color: cadetblue;
 }
-.fancy-header{
+h1.fancy-header{
     color: royalblue;
+    background-color: darkkhaki;
+    font-family: AppleMyungjo;
+}
+.fancy-header{
+    color: darkgreen;
+}
+h2.fancy-header{
+    color: mediumpurple;
+    background-color: darkkhaki;
 }
