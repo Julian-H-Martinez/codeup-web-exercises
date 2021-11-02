@@ -61,3 +61,11 @@ body {
         Read more about Flex Basis: https://java.codeup.com/appendix/further-reading/html-css/flexbox-additional-concepts/#flex-basis */
     flex-basis: 15em;
 }
+
+/* source cited: https://stackoverflow.com/questions/57892727/hide-the-calendar-icon-in-google-chrome */
+/* to remove calendar icon */
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
