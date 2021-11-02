@@ -255,5 +255,39 @@
      * }
      */
 
-    console.log(canukWrestler(wrestlers));
+    // console.log(canukWrestler(wrestlers));
+
+    var groceries = [
+        {
+            name: "carrots",
+            quantity: 5
+        },{
+            name: "yams",
+            quantity: 50
+        },{
+            name: "oranges",
+            quantity: 9
+        },{
+            name: "onions",
+            quantity: 2
+        },{
+            name: "cucumbers",
+            quantity: 6
+        },{
+            name: "potatoes",
+            quantity: 8
+        }
+    ];
+    /**
+     * Morning Warmup:
+     Create a function that takes in an array of objects, and returns the object with the highest quantity property.
+
+     Ex. getHighestQuantityObject(groceries)//returns {name: “yams”, quantity: 50};
+     */
+    function highestQtyItem(array){
+        console.log(array[0]);
+        return 'Highest qty item is groceries.name and there is groceries.qty.'
+    }
+//  Need to finish function. Create a variable as your 'bucket' to represent obj in arr.
+    console.log(highestQtyItem(groceries));
 }) ();
