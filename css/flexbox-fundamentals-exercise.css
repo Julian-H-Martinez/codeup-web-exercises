@@ -66,12 +66,12 @@ section:nth-of-type(1) div:last-child {
 
 .purple-box:nth-of-type(1) {
     /* enter needed declarations here */
-    flex-grow: 1;
+    flex-grow: 3;
 }
 
 .purple-box:nth-of-type(2) {
     /* enter needed declarations here */
-    flex-grow: 2;
+    flex-grow: 1;
 }
 
 .blue-box {
@@ -79,14 +79,16 @@ section:nth-of-type(1) div:last-child {
     background: blue;
     height: 10em;
 }
-
+    /* orange circles */
 section:nth-of-type(3) {
     /* enter needed declarations here */
+    justify-content: space-between;
+    align-items: center;
 }
 
 section:nth-of-type(3) h3 {
     /* enter needed declarations here */
-
+    flex-grow: 1;
 }
 
 .orange-circle {
