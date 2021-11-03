@@ -1,7 +1,50 @@
-body, html {
+body, html{
     height: 100%;
     width: 100%;
     padding: 0;
     margin: 0;
     font-family: Arial, Ubuntu, sans-serif;
+    --bg-info: rgba(0, 0, 255, 0.25);
+    --text-info: blue;
+    --bg-success: rgba(0, 100, 0, 0.25);
+    --text-success: darkgreen;
+    --bg-warning: rgba(255, 165, 0, 0.25);
+    --text-warning: orange;
+    --bg-error: rgba(255, 0, 0, 0.25);
+    --text-error: red;
+}
+/*message class used to style box dimensions*/
+.message{
+    box-sizing: border-box;
+    /*width: calc(100% / 2);*/
+    width: 98%;
+    height: 25px;
+    margin: 10px 20px;
+    padding: 5px 10px;
+    font-weight: bold;
+    border: 1px solid lightgray;
+    border-radius: 2.5px;
+    font-size: .75em;
+}
+/*message-info class background blue(transparent 25%) with blue font*/
+.message-info{
+    background-color: var(--bg-info);
+    color: var(--text-info);
+}
+/*message-info class background darkgreen(transparent 25%) with darkgreen font*/
+.message-success{
+    background-color: var(--bg-success);
+    color: var(--text-success);
+    /*background-color: rgba(0, 100, 0, 0.25);*/
+    /*color: darkgreen;*/
+}
+/*message-info class background orange(transparent 25%) with orange font*/
+.message-warning{
+    background-color: var(--bg-warning);
+    color: var(--text-warning);
+}
+/*message-info class background darkred(transparent 25%) with darkred font*/
+.message-error{
+    background-color: var(--bg-error);
+    color: var(--text-error);
 }
