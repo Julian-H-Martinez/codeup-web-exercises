@@ -9,3 +9,12 @@ h1{
     text-align: center;
     margin: 0;
 }
+.card-body{
+    padding: 1em !important;
+}
+.card-text{
+    padding: 1em 0 0 1em !important;
+}
+.list-group-item{
+    padding-left: 2.25em !important;
+}
