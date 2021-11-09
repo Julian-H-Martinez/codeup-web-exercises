@@ -9,10 +9,11 @@
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
 <body>
-<!-- creating header section container -->
+<!-- creating header section container to hold top section of resume -->
 <!-- will need section row with h1, h2, p, 4-divs -->
 <header class="container">
-    <!-- creating rows per section -->
+    <!-- creating section as a row -->
+    <!-- added bg-color for visual assistance -->
     <section class="row bg-secondary text-center">
         <h1 class="col-12  text-center ">Julian Martinez</h1>
         <h2 class="col-12 text-center bg-warning">Java - Full-Stack Web-Developer</h2>
@@ -29,8 +30,9 @@
 </header>
 <!-- creating main body as container for sub-sections-->
 <main class="container">
-<!-- row created to nest left column-->
+    <!-- row created to nest left column-->
     <div class="row">
+        <!-- left column being created with grid boxes -->
         <div class="col-12 col-md-5">
             <div class="card">
                 <div class="card-body">
@@ -51,9 +53,12 @@
                         neque, officiis omnis quasi repellat ullam ut voluptate?</p>
                 </div>
             </div>
+            <!-- creating card for job history -->
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Job History</h5>
+                    <!-- creating 2 cards inside of parent card -->
+                    <!-- card 1 of 2-->
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Job 1</h5>
@@ -62,6 +67,7 @@
                                 neque, officiis omnis quasi repellat ullam ut voluptate?</p>
                         </div>
                     </div>
+                    <!-- card 2 of 2 -->
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Job 2</h5>
@@ -73,11 +79,14 @@
                 </div>
             </div>
         </div>
-<!-- next section will be right side of row -->
+        <!-- next section will be right side of row -->
         <div class="col-12 col-md-7">
+            <!-- creating card for Development Projects -->
+            <!-- will nest cards that represent single project -->
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Development Projects</h5>
+                    <!-- 1 of 3 nested cards -->
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Project 1</h5>
@@ -86,6 +95,7 @@
                                 neque, officiis omnis quasi repellat ullam ut voluptate?</p>
                         </div>
                     </div>
+                    <!-- 2 of 3 nested cards -->
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Project 2</h5>
@@ -94,6 +104,7 @@
                                 neque, officiis omnis quasi repellat ullam ut voluptate?</p>
                         </div>
                     </div>
+                    <!-- 3 of 3 nested cards -->
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Project 3</h5>
@@ -104,9 +115,11 @@
                     </div>
                 </div>
             </div>
+            <!-- creating card to nest Awards and Involement cards -->
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Awards and Involvement</h5>
+                    <!-- 1 of 2 cards representing Award 1 -->
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Award 1</h5>
@@ -115,6 +128,7 @@
                                 neque, officiis omnis quasi repellat ullam ut voluptate?</p>
                         </div>
                     </div>
+                    <!-- 2 of 2 cards representing Involvement 1 -->
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Involvement 1</h5>
