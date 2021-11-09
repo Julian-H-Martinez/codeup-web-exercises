@@ -25,11 +25,17 @@ header {
 a {
     color: var(--link-color);
 }
+/**
+Use the class top-nav to make the navigation fixed, it also needs to use 100% of the width.
+Change the fixed top navigation z-index to 1000 or bigger. Does it work with a smaller value?
+*/
 .top-nav {
     background: var(--light-bg);
     position: fixed;
     width: 100%;
+    z-index: 1000;
 }
+/** Each nav-item should display inline block and have a padding of 1.5em. */
 .nav-item{
     display: inline-block;
     padding: 1.5em;
@@ -47,8 +53,24 @@ a {
 .nav-link:hover {
     color: var(--link-color);
 }
+/** Give a height of 80px to the profile class. */
 .profile {
     background: var(--light-bg);
+    height: 80px;
+}
+/** Use absolute positioning to center the avatar, you'll need to adjust the top value. Use the class profile-image for this purpose. */
+.profile-image{
+    position: absolute;
+    top: 14rem;
+}
+/** To which side should we float the .profile-form? Right
+One way to center text vertically is by changing its line-height.
+If it matches the height of the container the text will be centered vertically.
+Center the button inside the .profile-form element.
+*/
+.profile-form{
+    float: right;
+    line-height: 80px;
 }
 .btn {
     border: 1px solid var(--main-link-color);
@@ -72,12 +94,50 @@ a {
 .text-muted {
     color: var(--main-link-color);
 }
-
 /**
-Let's start with the main navigation header.
-When we position navigation links we don't use float or position.
-We usually display the individual link elements inline-block.
-
-Each nav-item should display inline block and have a padding of 1.5em.
-Use the class top-nav to make the navigation fixed, it also needs to use 100% of the width.
+profile-details, timeline, and who-to-follow should be floating elements.
+They should use 25%, 50% and 25% of the width respectively.
+These elements should have a margin of .5em to both sides (0 for top and bottom).
+Since we have a margin you will need to use calc to subtract the margin to the percents of the width property.
  */
+.profile-details{
+    float: left;
+    width: calc(25% - 1em);
+    margin: 0 .5em;
+}
+.timeline{
+    float: left;
+    width: calc(50% - 1em);
+    margin: 0 .5em;
+}
+.who-to-follow{
+    float: right;
+    width: calc(25% - 1em);
+    margin: 0 .5em;
+}
+.container{
+    padding-top: 2em;
+}
+.media{
+    width: 100%;
+    background-color: var(--light-bg);
+    border-bottom: 1px solid var(--separator-color);
+    padding: .5em;
+    overflow: hidden;
+}
+.media-image{
+    max-width: 50px;
+    float: left;
+    margin-top: 1.33em;
+}
+.media-body{
+    float: left;
+    width: calc(100% - 50px);
+}
+.profile-items{
+    list-style: none;
+    padding: 0;
+}
+.profile-entry{
+    margin: .5em;
+}
