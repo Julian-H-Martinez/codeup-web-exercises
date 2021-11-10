@@ -391,8 +391,6 @@
     }
 
     console.log(smallFry(bBallPlayers));
-
-
     /**
      * David's Walk-through
      * function findShortest(arr){
@@ -406,4 +404,37 @@
      * }
      * console.log(findShortest(bBallPlayers);
      */
+    /**
+     * Wed, 11.10 Warm-up
+     * Morning Warmup:
+     * Name your character object, and complete the attack method.
+     * The attack method should use the myCharacter weapon object to deal damage to the enemy objects hit points.
+     * When the attack method has been executed, the hit points of the enemy object should reflect the damage done in the console.
+     */
+    var myCharacter = {
+        name: 'Ol_Head',
+        hitPoints: 100,
+        class: 'Warrior',
+        abilities: {
+            attack: function(obj) {
+                //  add a console log sentence of what's happening
+                obj.hitPoints -= myCharacter.weapon.damage;
+                //  add a console log of hitPoints
+                return obj;
+            },
+        },
+        magicPoints: 0,
+        weapon: {
+            name: 'Silver Sabre',
+            damage: 16,
+            type: 'sword'
+        }
+    }
+    var enemy = {
+        name: 'Savage Orc',
+        hitPoints: 100,
+        class: 'Warrior',
+        magicPoints: 0,
+    }
+    console.log(myCharacter.abilities.attack(enemy));
 }) ();
