@@ -411,6 +411,7 @@
      * The attack method should use the myCharacter weapon object to deal damage to the enemy objects hit points.
      * When the attack method has been executed, the hit points of the enemy object should reflect the damage done in the console.
      */
+    /**
     var myCharacter = {
         name: 'Ol_Head',
         hitPoints: 100,
@@ -437,4 +438,29 @@
         magicPoints: 0,
     }
     console.log(myCharacter.abilities.attack(enemy));
+    */
+    /**
+     * Friday, 11/12 Warm-Up
+     *Morning Warmup:
+     Write a function in JavaScript that takes in an array, and returns a random element from the array.
+
+     Ex. randomEl([“rock”, “paper”, “scissors”, “lizard”, “Spock”]) // returns an element from the array.
+
+     function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+     */
+    function randomPull(arr){
+        var getRandom = Math.floor(Math.random()*(arr.length - 0) + 0); //  don't forget about Math.floor
+        return arr[getRandom];
+    }
+    var listOfStuff = ["rock", "paper", "scissors", "lizard", "Spock"];
+    console.log(randomPull(listOfStuff));
+
+    /**
+     * David Solution
+     * function randomEl(arr){
+     *     return arr[Math.floor(Math.random()*arr.length)]
+     * }
+     */
 }) ();
