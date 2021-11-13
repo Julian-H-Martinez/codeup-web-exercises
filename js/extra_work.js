@@ -33,7 +33,7 @@
      * Define a function named removeAll(array, value) that takes in two arguments.
      * The first argument should be an array and the second argument should be a value you wish to remove
 
-     Given:
+     cite: https://stackoverflow.com/questions/5767325/how-can-i-remove-a-specific-item-from-an-array
      */
     function removeAll(arr, value){
         var runner = 0;
@@ -52,6 +52,38 @@
     // console.log(removeAll(bugs, "mosquito"));   //  should return ["ant", "scorpion", "ant", "ant", "typo", "reference error", "type error"]
     // console.log(removeAll(bugs, "roach"));      //  should return the original array b/c "roach" has no occurrances.
 
+    /** Make a function called randomIntBetween(min, max) that returns a random number between the min and the max. */
+    //  note that max is not inclusive so will need to add one if you want a certain number inclusive
+    function randomIntBetween(min, max){
+        return Math.floor(Math.random()*(max - min)+min);
+    }
+    // console.log(randomIntBetween(10, 22));
+    /** Make a function called coinFlip() that returns either 0 or 1, randomly */
+    function coinFlip(){
+        return randomIntBetween(0, 2);
+    }
+    // console.log(coinFlip());
+    /** Make a function called twoDice() that returns the sum of rolling two six sided dice */
+    function twoDice(){
+        var dice1 = randomIntBetween(1, 7), dice2 = randomIntBetween(1, 7);
+        return `${dice1} + ${dice2} = ${dice1 + dice2}`;
+    }
+    // console.log(twoDice());
+    /** Make a function called twentySidedDie() that returns a random integer between 1 and 20 */
+    function twentySideDie(){
+        return randomIntBetween(1, 21);
+    }
+    // console.log(twentySideDie());
+    /** Make a function called twelveSidedDie() that returns a random integer between 1 and 12 */
+    function twelveSidedDie(){
+        return randomIntBetween(1, 13);
+    }
+    // console.log(twelveSidedDie());
+    /** Make a function called tetrahedron() that returns a random integer between 1 and 4 */
+    function tetrahedron(){
+        return randomIntBetween(1, 5);
+    }
+    // console.log(tetrahedron());
 
 
     //////////////////////////////---FUNCTIONS---/////////////////////////////////////
