@@ -84,6 +84,48 @@
         return randomIntBetween(1, 5);
     }
     // console.log(tetrahedron());
+    /** Make a function called rollDie() that returns an integer between 1 and 6 */
+    function rollDie(){
+        return randomIntBetween(1, 7);
+    }
+    /** Make a function called listOfRolls(num) that takes in a number containing how many 6-sided dice rolls you want to make. The listOfRolls
+     *  function should return an array of that length, where each element of the array is the result of the rollDie function */
+    function listOfRolls(num){
+        var bucket = [], i=0;
+        while(i < num){
+            var dieRoll = rollDie()
+            bucket.push(dieRoll)
+            ++i;
+        }
+        return bucket;
+    }
+    // console.log(listOfRolls(3));    //  should return an array of 3 random numbers
+    // console.log(listOfRolls(5));    //  should return an array of 5 random numbers
+    // console.log(listOfRolls(7));    //  should return an array of 7 random numbers
+    /** Make a function called listOfRollsFromDieFunc(numberOfRolls, diceFunction) */
+    /**
+     This function should take in two arguments:
+     The first argument is the number of rolls you want to make.
+     The second argument is a function that contains the function definition for the type of die you want to roll.
+     For example, if we call listOfDieRollsFromDieFunc(1, tetrahedron), then the function will return an array containing one value that is the
+     result of calling the tetrahedron function.
+     */
+    //  currently the function is keeping same number throughout the loop
+    //  will need to continue working to see where
+    //  add some logs to better identify what's happening
+    function listOfRollsFromDieFunc(numberOfRolls, diceFunction){
+        var bucket = [], i=0;
+        while(i < numberOfRolls){
+            var dieNum = diceFunction;
+            bucket.push(dieNum);
+            i++;
+        }
+        return bucket;
+    }
+
+    console.log(listOfRollsFromDieFunc(3, tetrahedron()));
+    console.log(listOfRollsFromDieFunc(7, twelveSidedDie()));
+    console.log(listOfRollsFromDieFunc(5, twentySideDie()));
 
 
     //////////////////////////////---FUNCTIONS---/////////////////////////////////////
