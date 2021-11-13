@@ -33,46 +33,101 @@
      * Define a function named removeAll(array, value) that takes in two arguments.
      * The first argument should be an array and the second argument should be a value you wish to remove
 
-     Given:
+     cite: https://stackoverflow.com/questions/5767325/how-can-i-remove-a-specific-item-from-an-array
+     */
+    function removeAll(arr, value){
+        var runner = 0;
+        while(runner < arr.length){
+            if(arr[runner] === value){
+                arr.splice(runner, 1);
+            }else{
+                ++runner;
+            }
+        }
+        return arr;
+    }
 
-     var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
-     removeAll(bugs, "ant") should return ["mosquito", "scorpion",   "mosquito", "typo", "reference error", "type error"]
-     removeAll(bugs, "mosquito") should return ["ant", "scorpion", "ant",   "ant", "typo", "reference error", "type error"]
-     removeAll(bugs, "roach") should return the original array b/c "roach" has no occurrances.
-     */
-    /**
-     * Not completed! Need to figure out how to remove all instances of a value in an array
-     * Pressing pause before I throw this computer ---- JK / JK
-     * When I return I will start from scratch and baby step it
-     * Don't forget to console log
-     * Don't forget to use GOOGLE!!!
-     * You're almost there!!!!
-     */
-    // function removeAll(array, value){
-    //     console.log(array);
-    //     var indexToRemove = allIndexesOf(array, value), i, j;
-    //     console.log(indexToRemove);
-    //     //  if statement to show if value is in array
-    //     //  if greater than -1(which is what's returned when index does not exist) then complete action
-    //     //  creating for loop to remove all indexes of values
-    //     for (i = 0; i < array.length; i++){
-    //         for(j = 0; j < indexToRemove.length; j++){
-    //             if(i === indexToRemove[j]){
-    //                 console.log(array[i] + " I am at index " + i + "!");
-    //                 //  action needed to remove value at index
-    //                 array.splice(array[i], 1);
-    //         }
-    //
-    //         }
-    //     }
-    //     return array;
-    // }
     // var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
-    // console.log(bugs);
-    // console.log(removeAll(bugs, "ant"));         //  should return ["mosquito", "scorpion",   "mosquito", "typo", "reference error", "type error"]
-    // console.log(bugs);
-    // console.log(removeAll(bugs, "mosquito"));    //  should return ["ant", "scorpion", "ant",   "ant", "typo", "reference error", "type error"]
-    // console.log(removeAll(bugs, "roach"));       //  should return the original array b/c "roach" has no occurrences.
+    // console.log(removeAll(bugs, "ant"));        //  should return ["mosquito", "scorpion", "mosquito", "typo", "reference error", "type error"]
+    // console.log(removeAll(bugs, "mosquito"));   //  should return ["ant", "scorpion", "ant", "ant", "typo", "reference error", "type error"]
+    // console.log(removeAll(bugs, "roach"));      //  should return the original array b/c "roach" has no occurrances.
+
+    /** Make a function called randomIntBetween(min, max) that returns a random number between the min and the max. */
+    //  note that max is not inclusive so will need to add one if you want a certain number inclusive
+    function randomIntBetween(min, max){
+        return Math.floor(Math.random()*(max - min)+min);
+    }
+    // console.log(randomIntBetween(10, 22));
+    /** Make a function called coinFlip() that returns either 0 or 1, randomly */
+    function coinFlip(){
+        return randomIntBetween(0, 2);
+    }
+    // console.log(coinFlip());
+    /** Make a function called twoDice() that returns the sum of rolling two six sided dice */
+    function twoDice(){
+        var dice1 = randomIntBetween(1, 7), dice2 = randomIntBetween(1, 7);
+        return `${dice1} + ${dice2} = ${dice1 + dice2}`;
+    }
+    // console.log(twoDice());
+    /** Make a function called twentySidedDie() that returns a random integer between 1 and 20 */
+    function twentySideDie(){
+        return randomIntBetween(1, 21);
+    }
+    // console.log(twentySideDie());
+    /** Make a function called twelveSidedDie() that returns a random integer between 1 and 12 */
+    function twelveSidedDie(){
+        return randomIntBetween(1, 13);
+    }
+    // console.log(twelveSidedDie());
+    /** Make a function called tetrahedron() that returns a random integer between 1 and 4 */
+    function tetrahedron(){
+        return randomIntBetween(1, 5);
+    }
+    // console.log(tetrahedron());
+    /** Make a function called rollDie() that returns an integer between 1 and 6 */
+    function rollDie(){
+        return randomIntBetween(1, 7);
+    }
+    /** Make a function called listOfRolls(num) that takes in a number containing how many 6-sided dice rolls you want to make. The listOfRolls
+     *  function should return an array of that length, where each element of the array is the result of the rollDie function */
+    function listOfRolls(num){
+        var bucket = [], i=0;
+        while(i < num){
+            var dieRoll = rollDie()
+            bucket.push(dieRoll)
+            ++i;
+        }
+        return bucket;
+    }
+    // console.log(listOfRolls(3));    //  should return an array of 3 random numbers
+    // console.log(listOfRolls(5));    //  should return an array of 5 random numbers
+    // console.log(listOfRolls(7));    //  should return an array of 7 random numbers
+    /** Make a function called listOfRollsFromDieFunc(numberOfRolls, diceFunction) */
+    /**
+     This function should take in two arguments:
+     The first argument is the number of rolls you want to make.
+     The second argument is a function that contains the function definition for the type of die you want to roll.
+     For example, if we call listOfDieRollsFromDieFunc(1, tetrahedron), then the function will return an array containing one value that is the
+     result of calling the tetrahedron function.
+     */
+    //  currently the function is keeping same number throughout the loop
+    //  will need to continue working to see where
+    //  add some logs to better identify what's happening
+    function listOfRollsFromDieFunc(numberOfRolls, diceFunction){
+        var bucket = [], i=0;
+        while(i < numberOfRolls){
+            var dieNum = diceFunction;
+            bucket.push(dieNum);
+            i++;
+        }
+        return bucket;
+    }
+
+    console.log(listOfRollsFromDieFunc(3, tetrahedron()));
+    console.log(listOfRollsFromDieFunc(7, twelveSidedDie()));
+    console.log(listOfRollsFromDieFunc(5, twentySideDie()));
+
+
     //////////////////////////////---FUNCTIONS---/////////////////////////////////////
     /**
      * Make a function named isOdd(number)
