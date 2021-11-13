@@ -73,6 +73,8 @@
     // console.log(bugs);
     // console.log(removeAll(bugs, "mosquito"));    //  should return ["ant", "scorpion", "ant",   "ant", "typo", "reference error", "type error"]
     // console.log(removeAll(bugs, "roach"));       //  should return the original array b/c "roach" has no occurrences.
+
+
     //////////////////////////////---FUNCTIONS---/////////////////////////////////////
     /**
      * Make a function named isOdd(number)
