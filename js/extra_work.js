@@ -34,45 +34,24 @@
      * The first argument should be an array and the second argument should be a value you wish to remove
 
      Given:
+     */
+    function removeAll(arr, value){
+        var runner = 0;
+        while(runner < arr.length){
+            if(arr[runner] === value){
+                arr.splice(runner, 1);
+            }else{
+                ++runner;
+            }
+        }
+        return arr;
+    }
 
-     var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
-     removeAll(bugs, "ant") should return ["mosquito", "scorpion",   "mosquito", "typo", "reference error", "type error"]
-     removeAll(bugs, "mosquito") should return ["ant", "scorpion", "ant",   "ant", "typo", "reference error", "type error"]
-     removeAll(bugs, "roach") should return the original array b/c "roach" has no occurrances.
-     */
-    /**
-     * Not completed! Need to figure out how to remove all instances of a value in an array
-     * Pressing pause before I throw this computer ---- JK / JK
-     * When I return I will start from scratch and baby step it
-     * Don't forget to console log
-     * Don't forget to use GOOGLE!!!
-     * You're almost there!!!!
-     */
-    // function removeAll(array, value){
-    //     console.log(array);
-    //     var indexToRemove = allIndexesOf(array, value), i, j;
-    //     console.log(indexToRemove);
-    //     //  if statement to show if value is in array
-    //     //  if greater than -1(which is what's returned when index does not exist) then complete action
-    //     //  creating for loop to remove all indexes of values
-    //     for (i = 0; i < array.length; i++){
-    //         for(j = 0; j < indexToRemove.length; j++){
-    //             if(i === indexToRemove[j]){
-    //                 console.log(array[i] + " I am at index " + i + "!");
-    //                 //  action needed to remove value at index
-    //                 array.splice(array[i], 1);
-    //         }
-    //
-    //         }
-    //     }
-    //     return array;
-    // }
     // var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
-    // console.log(bugs);
-    // console.log(removeAll(bugs, "ant"));         //  should return ["mosquito", "scorpion",   "mosquito", "typo", "reference error", "type error"]
-    // console.log(bugs);
-    // console.log(removeAll(bugs, "mosquito"));    //  should return ["ant", "scorpion", "ant",   "ant", "typo", "reference error", "type error"]
-    // console.log(removeAll(bugs, "roach"));       //  should return the original array b/c "roach" has no occurrences.
+    // console.log(removeAll(bugs, "ant"));        //  should return ["mosquito", "scorpion", "mosquito", "typo", "reference error", "type error"]
+    // console.log(removeAll(bugs, "mosquito"));   //  should return ["ant", "scorpion", "ant", "ant", "typo", "reference error", "type error"]
+    // console.log(removeAll(bugs, "roach"));      //  should return the original array b/c "roach" has no occurrances.
+
 
 
     //////////////////////////////---FUNCTIONS---/////////////////////////////////////
