@@ -113,19 +113,21 @@
     //  currently the function is keeping same number throughout the loop
     //  will need to continue working to see where
     //  add some logs to better identify what's happening
+    //  still getting same number
     function listOfRollsFromDieFunc(numberOfRolls, diceFunction){
-        var bucket = [], i=0;
+        var bucket = [], i=0, diceRoll;
         while(i < numberOfRolls){
-            var dieNum = diceFunction;
-            bucket.push(dieNum);
-            i++;
+            diceRoll = diceFunction;
+            console.log(`iteration number ${i}`);
+            bucket.push(diceRoll);
+            ++i;
         }
         return bucket;
     }
 
-    console.log(listOfRollsFromDieFunc(3, tetrahedron()));
-    console.log(listOfRollsFromDieFunc(7, twelveSidedDie()));
-    console.log(listOfRollsFromDieFunc(5, twentySideDie()));
+    // console.log(listOfRollsFromDieFunc(3, tetrahedron()));
+    // console.log(listOfRollsFromDieFunc(7, twelveSidedDie()));
+    // console.log(listOfRollsFromDieFunc(5, twentySideDie()));
 
 
     //////////////////////////////---FUNCTIONS---/////////////////////////////////////
