@@ -114,20 +114,22 @@
     //  will need to continue working to see where
     //  add some logs to better identify what's happening
     //  still getting same number
-    function listOfRollsFromDieFunc(numberOfRolls, diceFunction){
+    //  able to get function to work; when calling a function we will need the () in order for the function to be invoked
+    //  otherwise the function will run only once or not at all
+    //  added () to dieFunc on ln123 diceRoll = dieFunc() which invokes the function and runs accordingly
+    function listOfRollsFromDieFunc(numberOfRolls, dieFunc){
         var bucket = [], i=0, diceRoll;
         while(i < numberOfRolls){
-            diceRoll = diceFunction;
-            console.log(`iteration number ${i}`);
+            diceRoll = dieFunc();
             bucket.push(diceRoll);
             ++i;
         }
         return bucket;
     }
 
-    // console.log(listOfRollsFromDieFunc(3, tetrahedron()));
-    // console.log(listOfRollsFromDieFunc(7, twelveSidedDie()));
-    // console.log(listOfRollsFromDieFunc(5, twentySideDie()));
+    console.log(listOfRollsFromDieFunc(3, tetrahedron));
+    console.log(listOfRollsFromDieFunc(7, twelveSidedDie));
+    console.log(listOfRollsFromDieFunc(5, twentySideDie));
 
 
     //////////////////////////////---FUNCTIONS---/////////////////////////////////////
