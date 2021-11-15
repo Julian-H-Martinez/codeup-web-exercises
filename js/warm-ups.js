@@ -450,17 +450,12 @@
   return Math.random() * (max - min) + min;
 }
      */
-    function randomPull(arr){
-        var getRandom = Math.floor(Math.random()*(arr.length - 0) + 0); //  don't forget about Math.floor
-        return arr[getRandom];
-    }
-    var listOfStuff = ["rock", "paper", "scissors", "lizard", "Spock"];
-    console.log(randomPull(listOfStuff));
+    // function randomPull(arr){
+    //     var getRandom = Math.floor(Math.random()*(arr.length - 0) + 0); //  don't forget about Math.floor
+    //     return arr[getRandom];
+    // }
+    // var listOfStuff = ["rock", "paper", "scissors", "lizard", "Spock"];
+    // console.log(randomPull(listOfStuff));
 
-    /**
-     * David Solution
-     * function randomEl(arr){
-     *     return arr[Math.floor(Math.random()*arr.length)]
-     * }
-     */
+
 }) ();
