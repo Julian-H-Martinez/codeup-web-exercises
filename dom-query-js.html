@@ -7,6 +7,8 @@
 <body>
 
 <h1 id="main-header">Hello World!</h1>
+<!-- button to change header upon click -->
+<button id="btnHeader" >Change Header</button>
 <ul>
     <li data-dbid="1">Item 1</li>
     <li data-dbid="2">Item 2</li>
@@ -14,7 +16,11 @@
     <li data-dbid="4">Item 4</li>
     <li data-dbid="5">Item 5</li>
 </ul>
+<!-- button to change ul to have no color -->
+<button id="btnUl">Change List Color</button>
 <h2 id="sub-header">Hello Again.</h2>
+<!-- button to change sub-header to have no color-->
+<button id="btnSubHeader">Change Header Color</button>
 <p class="sub-paragraph">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -24,48 +30,60 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
+<button id="btnPara">Change Paragraph</button>
+<!--<script>-->
+<!--    (function() {-->
+<!--        "use strict";-->
+<!--        // TODO: Uncomment next line and get the main header element by id-->
+<!--        // var mainHeader = document.querySelector('#main-header');-->
+<!--        // console.log(mainHeader.innerHTML);-->
 
-<script>
-    (function() {
-        "use strict";
-        // TODO: Uncomment next line and get the main header element by id
-        var mainHeader = document.querySelector('#main-header');
-        // console.log(mainHeader.innerHTML);
+<!--        // // // TODO: Set inner html of mainHeader to "JavaScript is Cool"-->
+<!--        //     mainHeader.innerHTML = 'JavaScript is Cool';-->
 
-        // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = 'JavaScript is Cool';
+<!--        // TODO: Uncomment the next line and get the sub header element by id-->
+<!--        var subHeader = document.querySelector('#sub-header');-->
+<!--        // console.log(subHeader.innerHTML);-->
 
-        // TODO: Uncomment the next line and get the sub header element by id
-        var subHeader = document.querySelector('#sub-header');
-        // console.log(subHeader.innerHTML);
+<!--        // TODO: Set the text color of subHeader to blue-->
+<!--        subHeader.style.color = '#0096FF'-->
+<!--        // TODO: Uncomment the next line and get all list items-->
+<!--        var listItems = document.querySelectorAll('li');-->
+<!--        console.log(listItems);-->
 
-        // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = '#0096FF'
-        // TODO: Uncomment the next line and get all list items
-        var listItems = document.querySelectorAll('li');
-        console.log(listItems);
+<!--        // TODO: Set text color on every other list item to grey-->
+<!--        // TODO: Set text color of li with dbid = 1 to blue-->
+<!--        for(var i = 0; i < listItems.length; i++){-->
+<!--            if(listItems[i].getAttribute("data-dbid") == 1){-->
+<!--                listItems[i].style.color = '#0096FF';-->
+<!--            }else if((i+1) % 2 !== 0){-->
+<!--                continue;-->
+<!--            }else{-->
+<!--                listItems[i].style.color = '#808080';-->
+<!--            }-->
+<!--        }-->
 
-        // TODO: Set text color on every other list item to grey
-        // TODO: Set text color of li with dbid = 1 to blue
-        for(var i = 0; i < listItems.length; i++){
-            if(listItems[i].getAttribute("data-dbid") == 1){
-                listItems[i].style.color = '#0096FF';
-            }else if(i % 2 == 0){
-                listItems[i].style.color = '#808080';
-            }
-        }
+<!--        // TODO: Uncomment the next line and get all elements with class name sub-paragraph-->
+<!--        var subParagraphs = document.querySelectorAll('.sub-paragraph');-->
+<!--        // console.log(subParagraphs);-->
+<!--        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"-->
+<!--        subParagraphs[0].innerText = 'Mission Accomplished!';-->
 
-        // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        var subParagraphs = document.querySelectorAll('.sub-paragraph');
-        // console.log(subParagraphs);
-        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerText = 'Mission Accomplished!';
-    })();
-</script>
+<!--        // var mainHeadListener = function(event){-->
+<!--        //     mainHeader.innerHTML = 'JavaScript is Cool';-->
+<!--        // }-->
+<!--        &lt;!&ndash;-->
+<!--        create a handler function-->
+<!--        var listener = function (event) {-->
+<!--            alert('You clicked the button!');-->
+<!--        }-->
+
+<!--        register the listener to handle clicks on btn1-->
+<!--        document.getElementById('btn1').addEventListener('click', listener);-->
+<!--        &ndash;&gt;-->
+<!--    })();-->
+<!--</script>-->
+<script src="js/DOM-events.js"></script>
 </body>
 </html>
 
-<!--for (var i = 0; i < listItems.length; i++) {
-            var dbId = listItems[i].getAttribute("data-dbid");
-            console.log(dbId);
-        }-->
