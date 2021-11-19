@@ -51,7 +51,7 @@ $(document).ready(function(){
 
      Combine your selectors that highlight all the h1, p, and li elements.
      */
-
+    // $('h1, p, li')
     /**
      * Use the file jquery_exercises.html for these exercises. Commit your changes to GitHub.
 
