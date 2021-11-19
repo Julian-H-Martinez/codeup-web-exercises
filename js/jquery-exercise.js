@@ -41,12 +41,15 @@ $(document).ready(function(){
     listsFont.css({
         'font-size': '20px'
     })
-    var multipleSelectors = $('h1', 'p', 'li')
-    alert($('h1').html());
+    var headers = $('h1');
+    var paras = $('p');
+    var lists = $('li');
+    alert($(headers).html());
 
     /**
      * Multiple Selectors
 
      Combine your selectors that highlight all the h1, p, and li elements.
      */
+    $(headers, paras, lists).css('color', 'aqua');
 });
