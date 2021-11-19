@@ -27,7 +27,7 @@ $(document).ready(function(){
      // Give another element an id of codeup. Does this element get a border now? No
      */
     // var codeup = $('.codeup');
-    // codeup.css('border', 'solid 1px red')
+    // codeup.css('border', '1px solid red')
 
     /**
      * Element Selectors
