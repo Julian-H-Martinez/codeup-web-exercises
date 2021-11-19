@@ -9,7 +9,7 @@ $(document).ready(function(){
      // Add several attributes to your elements; you will need both id and class attributes.
      // Use jQuery to select an element by the id. Alert the contents of the element.
      // Update the jQuery code to select and alert a different id.
-     // Use the same id on 2 elements. How does this change the jQuery selection?
+     // Use the same id on 2 elements. How does this change the jQuery selection? Only one alert fires
      // Remove the duplicate id. Each id should be unique on that page.
       */
     // var mainHeader = $('#mainHeader');
@@ -20,13 +20,14 @@ $(document).ready(function(){
     /**
      * Class Selectors
 
-     Remove your custom jQuery code from previous exercises.
-     Update your code so that at least 3 different elements have the same class named codeup.
-     Using jQuery, create a border around all elements with the class codeup that is 1 pixel wide and red.
-     Remove the class from one of the elements. Refresh and test that the border has been removed.
-     Give another element an id of codeup. Does this element get a border now?
+     // Remove your custom jQuery code from previous exercises.
+     // Update your code so that at least 3 different elements have the same class named codeup.
+     // Using jQuery, create a border around all elements with the class codeup that is 1 pixel wide and red.
+     // Remove the class from one of the elements. Refresh and test that the border has been removed.
+     // Give another element an id of codeup. Does this element get a border now? No
      */
-
+    var codeup = $('.codeup');
+    codeup.css('border', 'solid 1px red')
     /**
      * Element Selectors
 
