@@ -26,16 +26,23 @@ $(document).ready(function(){
      // Remove the class from one of the elements. Refresh and test that the border has been removed.
      // Give another element an id of codeup. Does this element get a border now? No
      */
-    var codeup = $('.codeup');
-    codeup.css('border', 'solid 1px red')
+    // var codeup = $('.codeup');
+    // codeup.css('border', 'solid 1px red')
+
     /**
      * Element Selectors
 
-     Remove your custom jQuery code from previous exercises.
-     Using jQuery, set the font-size of all li elements to 20px.
+     // Remove your custom jQuery code from previous exercises.
+     // Using jQuery, set the font-size of all li elements to 20px.
      Craft selectors that highlight all the h1, p, and li elements.
      Create a jQuery statement to alert the contents of your h1 element(s).
      */
+    var listsFont = $('li');
+    listsFont.css({
+        'font-size': '20px'
+    })
+    var multipleSelectors = $('h1', 'p', 'li')
+    alert($('h1').html());
 
     /**
      * Multiple Selectors
