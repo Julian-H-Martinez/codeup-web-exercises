@@ -3,21 +3,34 @@
 <head>
     <title>Konami Code</title>
 </head>
-<body>
+<body id="mainBody">
 <h1>Konami Code</h1>
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 <!--<script src="/js/jquery.js"></script>-->
 <script>
     "use strict";
+$(document).ready(function(){
+
+    //  creating a bucket for users key input
+    var userInputKC = [];
+    //  variable for the actual konami code (converted to str)
+    var contraCodeStr = "3838404037393739666513";
+    //
+    var mainBody = $('#mainBody');
 
     $(document).keyup(function(event){
-        console.log(event.keyCode);     //  38,38,40,40,37,39,37,39,66,65,13
-        // var contraCode = [38,38,40,40,37,39,37,39,66,65,13];
-        // var eKCode = [];
-        // eKCode.push(event.keyCode);
-        // console.log(eKCode);
-        // alert('You have added 30 lives')
+        // console.log(event.keyCode);     //  38,38,40,40,37,39,37,39,66,65,13
+        userInputKC.push(event.keyCode);
+        // console.log(userInputKC.join(""));
+        if(userInputKC.join("") === contraCodeStr){
+            // console.log('it finally worked');
+            alert("You have added 30 lives!");
+            mainBody.css('background-color', 'green');
+        }
+
     });
+})
+
 </script>
 </body>
 </html>
