@@ -12,6 +12,7 @@ $(document).ready(function () {
     var dancing = $('.dancing');
     var dksFalse = $('.false');
     var tooMany = $('.tooMany');
+    var header = $('h1');
 
     $(document).keydown(function (event) {
         // console.log(event.keyCode);     //  38,38,40,40,37,39,37,39,66,65,13
@@ -44,6 +45,9 @@ $(document).ready(function () {
                 'background-image': 'img/mgsDance.gif',
                 'display': 'flex',
                 'margin': '0 auto'
+            })
+            header.css({
+                'font-family': 'Permanent Marker cursive'
             })
             // alert("You have added 30 lives!");
         }
