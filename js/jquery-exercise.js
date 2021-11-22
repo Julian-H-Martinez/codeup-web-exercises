@@ -61,16 +61,20 @@ $(document).ready(function(){
      // Set all li text color to red when the mouse is hovering; reset to black when it is not.
      */
     $('h1').click(function(){
-        $('h1').css('background-color', 'blue');
+        // $('h1').css('background-color', 'blue');
+        $(this).css('background-color', 'blue');     //  use 'this' to be more specific on element being selected
     });
     $('p').dblclick(function(){
-        $('p').css('font-size', '18px');
+        // $('p').css('font-size', '18px');
+        $(this).css('font-size', '18px');     //  use 'this' to be more specific on element being selected
     });
     $('li').hover(
         function(){
-        $('li').css('color', 'red');
+            // $('li').css('color', 'red');
+            $(this).css('color', 'red');     //  use 'this' to be more specific on element being selected
         },
         function(){
-            $('li').css('color', 'black');
+            // $('li').css('color', 'black');
+            $(this).css('color', 'black');     //  use 'this' to be more specific on element being selected
         })
 });
