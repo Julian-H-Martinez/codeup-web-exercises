@@ -1,0 +1,17 @@
+body{
+    box-sizing: border-box;
+}
+.dancing {
+    display: none;
+}
+
+.false {
+    display: none;
+}
+
+.tooMany {
+    display: none;
+}
+h1{
+    font-family: 'Carter One', cursive;
+}

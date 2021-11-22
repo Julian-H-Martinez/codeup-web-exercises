@@ -3,18 +3,13 @@
 <head>
     <title>Konami Code</title>
 
-<!-- styling w/in html -->
-    <style>
-        .dancing{
-            display: none;
-        }
-        .false{
-            display: none;
-        }
-        .tooMany{
-            display: none;
-        }
-    </style>
+    <!-- style links below -->
+    <link rel="stylesheet" href="css/konami-exercise.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 <body id="mainBody">
 <h1>Konami Code</h1>
@@ -23,90 +18,13 @@
 <img class="tooMany" src="img/tooManyChars.gif" alt="cockatoo much gif" width="472" height="392">
 
 
-
-
-
-
-
-
-
-
 <!-- script code below nothing to follow scripts -->
-<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-        crossorigin="anonymous"></script>
-<!--<script src="/js/jquery.js"></script>-->
-<script>
-    "use strict";
-$(document).ready(function(){
-
-    //  creating a bucket for users key input
-    var userInputKC = [];
-    //  variable for the actual konami code (converted to str)
-    var contraCodeStr = "3838404037393739666513";
-    var contraCode = [38,38,40,40,37,39,37,39,66,65,13];
-    //  creating var for mainbody selector
-    var mainBody = $('#mainBody');
-    var wrongStart = $('.wrongStart');
-    var dancing = $('.dancing');
-    var dksFalse = $('.false');
-    var tooMany = $('.tooMany');
-
-    $(document).keydown(function(event){
-        // console.log(event.keyCode);     //  38,38,40,40,37,39,37,39,66,65,13
-        userInputKC.push(event.keyCode);
-        // console.log(userInputKC.join(""));
-        if(userInputKC[0] !== 38){
-            wrongStart.html('starting off all wrong GUY!').css({
-                'color': 'red',
-                'font-size': '36px',
-            });
-            dksFalse.css({
-                'display': 'flex',
-                'margin': '0 auto'
-            })
-            mainBody.css('background-color', 'red')
-        }
-        if(userInputKC.length > contraCode.length){
-            tooMany.css({
-                'display': 'flex',
-                'margin': '0 auto'
-            })
-            mainBody.css('background-color', 'orange')
-            // alert('too many characters bruh')
-        }
-        if(userInputKC.join("") === contraCodeStr){
-            // console.log('it finally worked');
-            console.log(userInputKC.length);
-            mainBody.css('background-color', 'green');
-            dancing.css({
-                'background-image': 'img/mgsDance.gif',
-                'display': 'flex',
-                'margin': '0 auto'
-            })
-            // alert("You have added 30 lives!");
-        }
-    });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-})
-</script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+<script src="/js/konami-exercise.js"></script>
 </body>
 </html>
+
+<!--¯\_(ツ)_/¯-->
