@@ -7,7 +7,7 @@
 </head>
 <body>
 <main>
-    <form action="#">
+    <form action="#" method="post">
         <fieldset class="width-80">
             <div class="form-group">
                 <label for="username" class="form-label">Username</label>
@@ -20,6 +20,34 @@
             <button class="btn btn-block">Login</button>
         </fieldset>
     </form>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            var username = 'regulus2021';
+            var password = 'gocodeup';
+            var valueUsername = $('#username').val();
+            console.log(valueUsername);
+            var valuePassword = $('#password').val();
+            console.log(valuePassword);
+
+            function checkPassword(str){
+                if(str !== password){
+                    alert('incorrect password');
+                }
+            }
+            function checkUsername(str){
+                if(str !== username){
+                    alert('incorrect username');
+                }
+            }
+
+            // console.log(checkPassword('helloworld')); //    comes back undefined
+            // console.log(checkPassword('helloworld')); //    comes back undefined
+
+        })
+
+    </script>
 </main>
 </body>
 </html>

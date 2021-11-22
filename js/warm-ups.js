@@ -457,5 +457,20 @@
     // var listOfStuff = ["rock", "paper", "scissors", "lizard", "Spock"];
     // console.log(randomPull(listOfStuff));
 
+    /**
+     * Warmup
+     You are in charge of adding form validation for the login page for a contract position.
+     Navigate to your login-form.html file in codeup-web-exercises, write your code in an inline script.
 
+     Below is the username and password we would like you to test with.
+
+     Var username = “regulus2021”
+     Var password = “gocodeup”
+
+
+     If the user enters in the wrong username or password,
+     add a small text element under the password input field that reads
+     “We’re sorry, your username or password is incorrect. Please try again.”
+
+     */
 }) ();
