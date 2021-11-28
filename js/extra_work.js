@@ -1,5 +1,13 @@
 "use strict";
 (function(){
+    ////////////////////////////---DOM---////////////////////////////
+    /**
+     * Dom Events
+     When a user hits the "g" key, the background of the page should turn purple.
+     Every time the enter key is pressed, increment and display a counter that shows the total number of times the enter key has been pressed.
+     When someone types 1, 2, 3 in a row, show an alert that says "You get a 50% discount!".
+     */
+
     ///////////////////////////---ARRAYS---///////////////////////////
     /**
      * Define a function named allIndexesOf that takes in two arguments.
