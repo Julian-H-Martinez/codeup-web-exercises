@@ -5,7 +5,10 @@
     <title>National Parks</title>
 
 <!--Links to follow-->
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Permanent+Marker&display=swap" rel="stylesheet">
 <!--Styles-->
     <style>
         .invisible{
@@ -15,41 +18,51 @@
             background-color: lightskyblue;
             font-family: 'Carter One', cursive;
         }
+        dt{
+            font-family: 'Permanent Marker', SansSerif;
+        }
+        dd{
+            font-family: 'Carter One', cursive;
+            color: olivedrab;
+            font-size: 12px;
+        }
     </style>
 
 </head>
 <body>
 <p>National Parks</p>
 <dl>
-    <dt>Park 1</dt>
-    <dd>Description 1</dd>
+    <dt>Big Bend</dt>
+    <dd>There is a place in Far West Texas where night skies are dark as coal and rivers carve temple-like canyons in ancient limestone. Here, at
+        the end of the road, hundreds of bird species take refuge in a solitary mountain range surrounded by weather-beaten desert. Tenacious
+        cactus bloom in sublime southwestern sun, and diversity of species is the best in the country. This magical place is Big Bend...</dd>
 
-    <dt>Park 2</dt>
-    <dd>Description 2</dd>
+    <dt>Lyndon B Johnson</dt>
+    <dd>Lyndon Baines Johnson Lyndon B. Johnson National Historical Park tells the story of our 36th President beginning with his ancestors until his final resting place on his beloved LBJ Ranch. This entire "circle of life" gives the visitor a unique perspective into one of America's most noteworthy citizens by providing the most complete picture of any American president.</dd>
 
-    <dt>Park 3</dt>
-    <dd>Description 3</dd>
+    <dt>Capulin Volcano</dt>
+    <dd>Part of the 8,000 square mile Raton-Clayton Volcanic Field, Capulin Volcano showcases the volcanic geology of northeastern New Mexico. The views are spectacular day or night, with views of 4 different states from the volcanic rim and one of the darkest night skies in the country. Whether it's a quick stop or a day's trip, enjoy exploring the landscape of this unique volcano!</dd>
 
-    <dt>Park 4</dt>
-    <dd>Description 4</dd>
+    <dt>Carlsbad Caverns</dt>
+    <dd>High ancient sea ledges, deep rocky canyons, flowering cactus, and desert wildlife—treasures above the ground in the Chihuahuan Desert. Hidden beneath the surface are more than 119 caves—formed when sulfuric acid dissolved limestone leaving behind caverns of all sizes.</dd>
 
-    <dt>Park 5</dt>
-    <dd>Description 5</dd>
+    <dt>White Sands</dt>
+    <dd>Rising from the heart of the Tularosa Basin is one of the world's great natural wonders - the glistening white sands of New Mexico. Great wave-like dunes of gypsum sand have engulfed 275 square miles of desert, creating the world's largest gypsum dunefield. White Sands National Park preserves a major portion of this unique dunefield, along with the plants and animals that live here.</dd>
 
-    <dt>Park 6</dt>
-    <dd>Description 6</dd>
+    <dt>Rocky Mountain</dt>
+    <dd>Rocky Mountain National Park’s 415 square miles encompass and protect spectacular mountain environments. Enjoy Trail Ridge Road – which crests at over 12,000 feet including many overlooks to experience the subalpine and alpine worlds – along with over 300 miles of hiking trails, wildflowers, wildlife, starry nights, and fun times. In a world of superlatives, Rocky is on top!</dd>
 
-    <dt>Park 7</dt>
-    <dd>Description 7</dd>
+    <dt>Grand Canyon</dt>
+    <dd>Located in Arizona, Grand Canyon National Park encompasses 277 miles (446 km) of the Colorado River and adjacent uplands. The park is home to much of the immense Grand Canyon; a mile (1.6 km) deep, and up to 18 miles (29 km) wide. Layered bands of colorful rock reveal millions of years of geologic history. Grand Canyon is unmatched in the vistas it offers visitors from the rim. Open 24 hours.</dd>
 
-    <dt>Park 8</dt>
-    <dd>Description 8</dd>
+    <dt>Petrified Forest</dt>
+    <dd>Park Hours: 8am to 5pm, MST No reservations needed. Visitors & staff must wear a mask to enter any public building, including the visitor center, even if vaccinated. Did you know that Petrified Forest is perfect for exploration and discovery? While the park has all the wonders known for a century, there are many new adventures and discoveries to share. Come rediscover Petrified Forest!</dd>
 
-    <dt>Park 9</dt>
-    <dd>Description 9</dd>
+    <dt>Arches</dt>
+    <dd>Visit Arches to discover a landscape of contrasting colors, land forms, and textures unlike any other in the world. The park has over 2,000 natural stone arches and hundreds of soaring pinnacles, massive rock fins, and giant balanced rocks. This red-rock wonderland will amaze you with its formations, refresh you with its trails, and inspire you with its sunsets.</dd>
 
-    <dt>Park 10</dt>
-    <dd>Description 10</dd>
+    <dt>Hawai'i Volcanoes</dt>
+    <dd>Hawai‘i Volcanoes National Park protects some of the most unique geological, biological, and cherished cultural landscapes in the world. Extending from sea level to 13,677 feet, the park encompasses the summits of two of the world's most active volcanoes - Kilauea and Mauna Loa - and is a designated International Biosphere Reserve and UNESCO World Heritage Site.</dd>
 
     <button id="hide"><a href="#">Show Description</a></button>
 </dl>
@@ -60,6 +73,11 @@
 <!--Scripts to follow-->
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
         crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
 <script src="js/jquery_faq.js"></script>
 </body>
 </html>
+
+<!--used following site to identify National Parks-->
+<!--cite: https://www.nps.gov/findapark/index.htm-->

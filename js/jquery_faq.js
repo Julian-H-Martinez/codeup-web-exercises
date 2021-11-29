@@ -7,6 +7,7 @@ $(document).ready(function () {
     $('#hide').click(function(e){
         e.preventDefault();
         $('dd').toggleClass('invisible')
+        $('#hide').html('Hide Description')
 
     })
     //  Bonus:
