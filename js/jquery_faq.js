@@ -33,4 +33,14 @@ $(document).ready(function () {
         $(this).next().toggleClass('boldedFont')
     })
 
+    //  TODO: add click event to li so that first li of parent ul should have blue font
+    $('li').click(function(){
+        // $('ul').children().first().css('color', 'hotpink')
+        $('ul').each(function(index){
+            if(index >= 0){
+                $(this).children().first().toggleClass('blueFont');
+            }
+        })
+    })
+
 })
