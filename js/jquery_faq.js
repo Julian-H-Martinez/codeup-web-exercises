@@ -30,17 +30,19 @@ $(document).ready(function () {
 
     //  TODO: add click event to h3 so that <li>s will be bolded to font-weight: bold
     $('h3').click(function(){
-        $(this).next().toggleClass('boldedFont')
+        $(this).next().children().toggleClass('boldedFont')
     })
 
     //  TODO: add click event to li so that first li of parent ul should have blue font
     $('li').click(function(){
-        // $('ul').children().first().css('color', 'hotpink')
-        $('ul').each(function(index){
-            if(index >= 0){
-                $(this).children().first().toggleClass('blueFont');
-            }
-        })
+        $(this).parent().children().first().toggleClass('blueFont');
     })
+
+    /**
+     * Walkthrough with David on last problem
+     * $("li").click(function(){
+     *     $(this).parent().children().first().toggleClass("className")
+     * }
+     */
 
 })
