@@ -28,4 +28,9 @@ $(document).ready(function () {
         })
     })
 
+    //  TODO: add click event to h3 so that <li>s will be bolded to font-weight: bold
+    $('h3').click(function(){
+        $(this).next().toggleClass('boldedFont')
+    })
+
 })
