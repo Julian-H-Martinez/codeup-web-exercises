@@ -46,28 +46,19 @@
             })
         }
 
+        // TODO: Take the data from inventory.json and append it to the products table
         //  refactored to have function above and will call when needed below.
         storeInventory.done(onSuccess)
-        // storeInventory.done(function (data) {
-        //     // console.log(data);
-        //     // TODO: Take the data from inventory.json and append it to the products table
-        //     data.forEach(function (item) {
-        //         // console.log(item);
-        //         $("#insertProducts").append(`<tr> <td>${item.title} </td> <td>${item.quantity} </td> <td>${item.price} </td> <td>${item.categories}</td> </tr>`)
-        //     })
-        // })
 
 
         //  trying to figure a way to have page refresh without reloading
         //  issue having is page is reloading before button is clicked
-        //  per David, need to look into reload save => need to look more into it
+        //  per David, need to look into reload save => reload save is in url bar that needs to be removed
         //  utilizing .empty suggested by Derek Dobbs => incorrect cause I want the page to have table and reload after I click button
         $("#refreshList").click(function () {
             storeInventory.done(function (data) {
                 //  will prevent empty data so that it's not repeated on click
                 $("#insertProducts").empty();
-                // console.log(data);
-
                 // TODO: Take the data from inventory.json and append it to the products table
                 data.forEach(function (item) {
                     // console.log(item);

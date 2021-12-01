@@ -54,12 +54,5 @@
             "lumber"
         ],
         "price": 59.99
-    }, {
-        "title": "Sledge Hammer",
-        "quantity": 12,
-        "categories": [
-            "tool"
-        ],
-        "price": 69.99
     }
 ]
