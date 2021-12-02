@@ -46,16 +46,16 @@
     },5000);
      */
 
-    setTimeout(function () {
-        map.flyTo({
-            center: [-97.0425239, 32.8998136],
-            speed: 0.5       //  slows/speeds animation down/up
-        })
-        map.setStyle('mapbox://styles/mapbox/satellite-streets-v11')
-    }, 5000)
-    document.querySelector("#zoom").addEventListener('click', function () {
-        map.setZoom(map.getZoom() + 1);
-    })
+    // setTimeout(function () {
+    //     map.flyTo({
+    //         center: [-97.0425239, 32.8998136],
+    //         speed: 0.5       //  slows/speeds animation down/up
+    //     })
+    //     map.setStyle('mapbox://styles/mapbox/satellite-streets-v11')
+    // }, 5000)
+    // document.querySelector("#zoom").addEventListener('click', function () {
+    //     map.setZoom(map.getZoom() + 1);
+    // })
     /**
      * Jay's walk through
      setTimeout(function(){
@@ -69,6 +69,42 @@
         map.setZoom(map.getZoom() + 1);
     })
      */
+
+    /** MARKERS */
+    //  Instantiate a new Marker object
+    var codeup = new mapboxgl.Marker({
+        color: "blue",
+        }).setLngLat([-98.48615, 29.426827]).setDraggable(true) //  by default setDraggable is false
+
+    //  adding our newly instantiated Marker object to the Map object for rendering
+    codeup.addTo(map)
+
+    //  will need .on in order to use event listeners
+    //  listening for a 'dragend' event
+    codeup.on('dragend', function(){
+        // console.log("Stop moving me around!!!")
+        console.log(codeup.getLngLat());
+    })
+
+    //  can remove marker
+    // codeup.remove();
+
+    /** POPUPS */
+    //  good to not that new instantiates an object
+    var popup = new mapboxgl.Popup()
+    .setLngLat(codeup.getLngLat())
+    .setHTML('<h3 style="color: green">Hello from Codeup!</h3>')
+    .addTo(map);
+
+
+    // popup.setLngLat(codeup.getLngLat());
+    // popup.addTo(map);
+
+    /** Mini Exercise 2 */
+    // Create an HTML file called mapbox-2.html. In this file, create a map centered
+    // on New York with a marker on the Statue of Liberty. Add a popup to the Statue of
+    // Liberty marker with the text "Statue of Liberty".
+    // *BONUS - when the marker is dragged and released, display the coordinates in an H1 below the map.
 </script>
 </body>
 </html>
