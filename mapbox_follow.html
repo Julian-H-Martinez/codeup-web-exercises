@@ -12,19 +12,20 @@
 <body>
 <h1>Welcome to Mapbox!</h1>
 
-<div id='map' style='width: 400px; height: 300px;'></div>
+<div id='map' style='width: 600px; height: 400px;'></div>
 <button id="zoom">Zoom</button>
+<div id="newCoordinates"></div>
 <!--Keys need to be above rest of scripts-->
 <script src="js/keys.js"></script>
 <!--SCRIPTS TO FOLLOW-->
 <script>
-    mapboxgl.accessToken = MAPBOX_KEY;
-    const map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: [-98.4936, 29.4241], // starting position [lng, lat]    //  San Antonio
-        zoom: 12 // starting zoom
-    });
+    // mapboxgl.accessToken = MAPBOX_KEY;
+    // const map = new mapboxgl.Map({
+    //     container: 'map', // container ID
+    //     style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    //     center: [-98.4936, 29.4241], // starting position [lng, lat]    //  San Antonio
+    //     zoom: 12 // starting zoom
+    // });
     /**
      //TODO:
      * Mini exercise #1 - Create an HTML file named mapbox-1.html.
@@ -71,30 +72,30 @@
      */
 
     /** MARKERS */
-    //  Instantiate a new Marker object
-    var codeup = new mapboxgl.Marker({
-        color: "blue",
-        }).setLngLat([-98.48615, 29.426827]).setDraggable(true) //  by default setDraggable is false
-
-    //  adding our newly instantiated Marker object to the Map object for rendering
-    codeup.addTo(map)
-
-    //  will need .on in order to use event listeners
-    //  listening for a 'dragend' event
-    codeup.on('dragend', function(){
-        // console.log("Stop moving me around!!!")
-        console.log(codeup.getLngLat());
-    })
+    // //  Instantiate a new Marker object
+    // var codeup = new mapboxgl.Marker({
+    //     color: "blue",
+    //     }).setLngLat([-98.48615, 29.426827]).setDraggable(true) //  by default setDraggable is false
+    //
+    // //  adding our newly instantiated Marker object to the Map object for rendering
+    // codeup.addTo(map)
+    //
+    // //  will need .on in order to use event listeners
+    // //  listening for a 'dragend' event
+    // codeup.on('dragend', function(){
+    //     // console.log("Stop moving me around!!!")
+    //     console.log(codeup.getLngLat());
+    // })
 
     //  can remove marker
     // codeup.remove();
 
     /** POPUPS */
-    //  good to not that new instantiates an object
-    var popup = new mapboxgl.Popup()
-    .setLngLat(codeup.getLngLat())
-    .setHTML('<h3 style="color: green">Hello from Codeup!</h3>')
-    .addTo(map);
+    // //  good to not that new instantiates an object
+    // var popup = new mapboxgl.Popup()
+    // .setLngLat(codeup.getLngLat())
+    // .setHTML('<h3 style="color: green">Hello from Codeup!</h3>')
+    // .addTo(map);
 
 
     // popup.setLngLat(codeup.getLngLat());
@@ -105,6 +106,34 @@
     // on New York with a marker on the Statue of Liberty. Add a popup to the Statue of
     // Liberty marker with the text "Statue of Liberty".
     // *BONUS - when the marker is dragged and released, display the coordinates in an H1 below the map.
+    mapboxgl.accessToken = MAPBOX_KEY;
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-74.5387208, 40.6971812], // starting position [lng, lat]    //  San Antonio
+        zoom: 7 // starting zoom
+    });
+
+    //  Instantiate a new Marker object
+    var statueOfLiberty = new mapboxgl.Marker({color: "green",})
+        .setLngLat([-74.0466837, 40.6892534])
+        .setDraggable(true) //  by default setDraggable is false
+        .addTo(map)     //  adds marker to map
+
+    //  good to note that "new" instantiates an object
+    var popup = new mapboxgl.Popup()
+        .setLngLat(statueOfLiberty.getLngLat())
+        .setHTML('<h3 style="color: darkblue">Statue of Liberty</h3>')
+        .addTo(map);
+
+    //  will need .on in order to use event listeners
+    //  listening for a 'dragend' event
+    statueOfLiberty.on('dragend', function(){
+        (document).querySelector('#newCoordinates').append(statueOfLiberty.getLngLat());
+        //  jQuery version
+        //  $('#newCoordinates').html('Current Location: ' + statueOfLiberty.getLngLat())
+    })
+
 </script>
 </body>
 </html>
