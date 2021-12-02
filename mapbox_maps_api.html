@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapping Maps</title>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+
+</head>
+<body>
+<h1>Welcome to My Mapbox</h1>
+<br>
+
+<h3>Here's the city of my favorite restaurant!</h3>
+<div id='map' style='width: 400px; height: 300px;'></div>
+<hr>
+<br>
+
+<h3>Here's the city of my favorite NFL team</h3>
+<div id='map2' style='width: 400px; height: 300px;'></div>
+
+
+<!--MAPBOX JS-->
+<script src="js/keys.js"></script>
+
+<!--JQUERY CDN 3.6-->
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+
+<!--MAPBOX GEOCODER UTIL METHODS-->
+<script src="js/mapbox-geocoder-utils.js"></script>
+
+<!--CUSTOM JS-->
+<script>
+    mapboxgl.accessToken = MAPBOX_KEY;
+    //  creating a new map const
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-98.493629, 29.424122], // starting position [lng, lat]
+        zoom: 9 // starting zoom
+    });
+
+    const map2 = new mapboxgl.Map({
+        container: 'map2',       //    container ID
+        style: 'mapbox://styles/mapbox/streets-v11',    //  style URL
+        center: [-86.781601, 36.162663],    //  starting position [lng, lat]
+        zoom: 9                 //  starting zoom
+    })
+
+
+</script>
+</body>
+</html>
+
