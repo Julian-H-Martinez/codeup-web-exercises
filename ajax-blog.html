@@ -45,7 +45,7 @@
         function onSuccess(data){
             data.forEach(function (item) {
                 // console.log(item);
-                $("#posts").append(`<p>${item.title} </p>`)
+                $("#posts").append(`<p>${item.title} </p><p>${item.content}</p><p>${item.categories}</p>`)
             })
         }
 
