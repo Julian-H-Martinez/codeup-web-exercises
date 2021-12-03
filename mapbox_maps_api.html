@@ -9,24 +9,40 @@
     <!--STYLESHEETS AND STYLING BELOW-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-
+    <style>
+        /**
+        Trying to customize marker below; need to adjust img size so that it appears
+        rn certain imgs will appear but distorted
+         */
+        #marker{
+            background-color: rgba(255, 98, 0, 0.99);
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-<h1>Welcome to My Mapbox</h1>
-<br>
+<main class="container">
+    <h1 class="text-center">Welcome to My Mapbox</h1>
+<!--    <h3>Here's the city of my favorite restaurant!</h3>-->
+    <div class="container">
+    <div class="mb-2 rounded mx-auto d-block" id='map' style='width: 400px; height: 300px;'></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <button id="btnFiveX" class="btn btn-sm btn-primary m-2">Zoom lvl05</button>
+                <button id="btn15X" class="btn btn-sm btn-primary m-2">Zoom lvl15</button>
+                <button id="btn20X" class="btn btn-sm btn-primary m-2">Zoom lvl20</button>
+            </div>
 
-<h3>Here's the city of my favorite restaurant!</h3>
-<div id='map' style='width: 400px; height: 300px;'></div>
-<div class="container">
-    <button id="btnFiveX" class="btn btn-sm btn-primary">Zoom lvl05</button>
-    <button id="btn15X" class="btn btn-sm btn-primary">Zoom lvl15</button>
-    <button id="btn20X" class="btn btn-sm btn-primary">Zoom lvl20</button>
-</div>
-<hr>
-<br>
+        </div>
+    </div>
+    <hr>
+<!--    <h3>Here's the city of my favorite NFL team</h3>-->
+<!--    <div id='map2' style='width: 400px; height: 300px;'></div>-->
+</main>
 
-<h3>Here's the city of my favorite NFL team</h3>
-<div id='map2' style='width: 400px; height: 300px;'></div>
 
 
 <!--MAPBOX JS-->
@@ -43,41 +59,66 @@
 
 <!--CUSTOM JS-->
 <script>
-    mapboxgl.accessToken = MAPBOX_KEY;
-    //  creating a new map const
-    const map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: [-98.493629, 29.424122], // starting position [lng, lat]
-        zoom: 9 // starting zoom
-    });
+    $(document).ready(function(){
+        mapboxgl.accessToken = MAPBOX_KEY;
+        //  MAP(S) BELOW
+        const map = new mapboxgl.Map({
+            container: 'map', // container ID
+            style: 'mapbox://styles/mapbox/streets-v11', // style URL
+            center: [-98.493629, 29.424122], // starting position [lng, lat]
+        });
 
-    const map2 = new mapboxgl.Map({
-        container: 'map2',       //    container ID
-        style: 'mapbox://styles/mapbox/streets-v11',    //  style URL
-        center: [-86.781601, 36.162663],    //  starting position [lng, lat]
-        zoom: 9                 //  starting zoom
+        // const map2 = new mapboxgl.Map({
+        //     container: 'map2',       //    container ID
+        //     style: 'mapbox://styles/mapbox/streets-v11',    //  style URL
+        //     center: [-86.781601, 36.162663],    //  starting position [lng, lat]
+        //     zoom: 9                 //  starting zoom
+        // })
+
+        //  geocode returns an array of numbers (lng, lat)
+        geocode("San Antonio, TX", MAPBOX_KEY).then(function (result) {
+            console.log(result);
+            map.setCenter(result);
+            map.setZoom(8.7);
+        });
+
+        //  POPUPS TO FOLLOW
+        //  original popup created
+        /**
+        var pizzaPopup = new mapboxgl.Popup()
+        .setLngLat(pizzaSpot.getLngLat())
+        .setHTML('<h3>Stouts Pizza</h3>')
+        .addTo(map);
+         */
+        //  popup to be called on in MARKER
+        var pizzaPopup = new mapboxgl.Popup({
+            offset: 25
+            })
+            .setHTML('<h5>Stouts Pizza</h5><p>My go to pizza joint</p>')
+
+        //  CREATING DOM ELEMENT FOR MARKER
+        //  be sure to find out why
+        const el = document.createElement('div');
+        el.id = 'marker'
+
+        //  MARKERS BELOW
+        var pizzaSpot = new mapboxgl.Marker(el)
+            .setLngLat([-98.4646132, 29.6062407])
+            .setPopup(pizzaPopup)
+            .addTo(map);
+        //  [-98.4646132, 29.6062407] -> Stouts Pizza, 1604 & Gold Canyon
+
+        //  EVENT LISTENERS
+        $('#btnFiveX').click(function () {
+            map.setZoom(5);
+        })
+        $('#btn15X').click(function(){
+            map.setZoom(15);
+        })
+        $('#btn20X').click(function(){
+            map.setZoom(20);
+        })
     })
-
-    //  geocode returns an array of numbers (lng, lat)
-    geocode("San Antonio, TX 78244", MAPBOX_KEY).then(function (result) {
-        console.log(result);
-        map.setCenter(result);
-        map.setZoom(15);
-    });
-
-    //  EVENT LISTENERS
-    $('#btnFiveX').click(function () {
-        map.setZoom(5);
-    })
-    $('#btn15X').click(function(){
-        map.setZoom(15);
-    })
-    $('#btn20X').click(function(){
-        map.setZoom(20);
-    })
-
-
 </script>
 </body>
 </html>
