@@ -77,7 +77,7 @@
         function placeMarkerNPopup(info, token, map) {
             geocode(info.address, token).then(function (coordinates) {
                 var popup = new mapboxgl.Popup()
-                    .setHTML(info.name);
+                    .setHTML(`<h6>${info.name}</h6><p>${info.description}</p><p>${info.address}</p>`);
                 var marker = new mapboxgl.Marker()
                     .setLngLat(coordinates)
                     .addTo(map)
@@ -91,20 +91,23 @@
             {
                 name: 'Stouts Pizza',
                 address: '1742 N Loop 1604 E,San Antonio,TX 78232',
-                descrition: ''
+                description: 'My go to pizza joint'
             }, {
                 name: 'Thai House',
                 address: '4114 Rittiman Rd, San Antonio, TX 78218',
-                descrition: ''
+                description: 'Have yet to find a better one'
             }, {
                 name: 'La Playa',
                 address: '3201 W Poplar St, San Antonio, TX 78228',
-                descrition: ''
+                description: 'Mexican seafood at their best'
             }]
 
-        placeMarkerNPopup(favoriteFoodSpots[0], MAPBOX_KEY, map);
-        placeMarkerNPopup(favoriteFoodSpots[1], MAPBOX_KEY, map);
-        placeMarkerNPopup(favoriteFoodSpots[2], MAPBOX_KEY, map);
+        //  .forEach() loop to display Marker and Popup for each array item
+        favoriteFoodSpots.forEach(function(spot){
+            // console.log(spot.name);
+            placeMarkerNPopup(spot, MAPBOX_KEY, map);
+        })
+
         //  geocode returns an array ([lng, lat])
         //  returns the LngLat of given address
         geocode("San Antonio, TX", MAPBOX_KEY).then(function (result) {
