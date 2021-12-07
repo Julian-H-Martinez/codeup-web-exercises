@@ -30,10 +30,10 @@ $(document).ready(function () {
         units: "imperial"
     }).done(function (data) {
         var currentDayTemp = data.current.temp;
-        console.log(currentDayTemp);
+        // console.log(currentDayTemp);
 
         var arrOfDays = data.daily;
-        console.log(arrOfDays);
+        // console.log(arrOfDays);
 
         var formattedDate = new Date(arrOfDays[2].dt * 1000)
 
@@ -42,9 +42,9 @@ $(document).ready(function () {
 
         var weatherIcon = data.current.weather[0].icon;
         // console.log(weatherIcon);
-        console.log('The entire response:', data);
-        console.log('Diving in - here is current information: ', data.current);
-        console.log('A step further - information for tomorrow: ', data.daily[1]);
+        // console.log('The entire response:', data);
+        // console.log('Diving in - here is current information: ', data.current);
+        // console.log('A step further - information for tomorrow: ', data.daily[1]);
         $("#weather_icon").attr("src", `http://openweathermap.org/img/w/${weatherIcon}.png`);
         // $('#card #name').html(`${currentDayTemp}`);
         // $('#card .temp').html(`Tomorrow's Temperature is: ${singleDayTemp}`);
@@ -67,9 +67,9 @@ $(document).ready(function () {
     // function to display temp and date (date is UNIX and will correct later)
     function displayDays(arr) {
         arr.forEach(function (day) {
-            console.log(day.temp);
-            console.log(day.date);
-            console.log(day.icon);
+            // console.log(day.temp);
+            // console.log(day.date);
+            // console.log(day.icon);
             $('#listOfDays').append(`
                 <div class="card">
                     <div class="card-body d-flex flex-column align-items-center">
@@ -110,11 +110,15 @@ $(document).ready(function () {
         center: [-98.493629, 29.424122]
     });
 
-    geocode("San Antonio, TX", MAPBOX_KEY).then(function (result) {
-        console.log(result);
-        map.setCenter(result);
-        map.setZoom(8.7);
-    });
+    // geocode("San Antonio, TX", MAPBOX_KEY).then(function (result) {
+    //     console.log(result);
+    //     map.setCenter(result);
+    //     map.setZoom(8.7);
+    // });
+
+    reverseGeocode({lat: 32.77, lng: -96.79}, MAPBOX_KEY).then(function(results) {
+        console.log(results)
+    })
 
 
 })
