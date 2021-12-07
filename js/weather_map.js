@@ -3,7 +3,38 @@ $(document).ready(function () {
     var name = $('#name');
     var temp = $('.temp');
     var listOfDays = $('#listOfDays');
-    var newArrayOfDays = []
+    var newArrayOfDays = [];
+    var searchPts = [];
+
+    //  CLICK EVENT(s)
+    $("#searchBar").click(function(e){
+        e.preventDefault();
+        var searchValue = $('#userInput').val();
+        // console.log((searchValue))
+        geocode(searchValue, MAPBOX_KEY).then(function (result) {
+            // console.log(result);
+            searchPts.push(result);
+            map.flyTo({
+                //  centered at target
+                center: result,
+                //  zoom level
+                zoom: 9,
+                //  bearing (direction of map)
+                bearing: 0,  //  0 is north
+                //  controlling speed of zoom
+                speed: 0.2,
+                //  change speed at which it zooms out
+                curve: 1,
+                //  easing - not using
+                //  easing: (t) => t,
+                //  animation essential?
+                essential: true,
+            })
+        });
+        console.log(searchPts);
+    })
+    console.log(searchPts);
+
     mapboxgl.accessToken = MAPBOX_KEY;
 
     // $.get("http://api.openweathermap.org/data/2.5/weather", {
@@ -36,20 +67,21 @@ $(document).ready(function () {
         // console.log(arrOfDays);
 
         var formattedDate = new Date(arrOfDays[2].dt * 1000)
+        // console.log(formattedDate);
 
         // var singleDayTemp = arrOfDays[3].temp.day;
         // console.log(singleDayTemp);
 
         var weatherIcon = data.current.weather[0].icon;
         // console.log(weatherIcon);
+
         // console.log('The entire response:', data);
         // console.log('Diving in - here is current information: ', data.current);
         // console.log('A step further - information for tomorrow: ', data.daily[1]);
+
         $("#weather_icon").attr("src", `http://openweathermap.org/img/w/${weatherIcon}.png`);
-        // $('#card #name').html(`${currentDayTemp}`);
-        // $('#card .temp').html(`Tomorrow's Temperature is: ${singleDayTemp}`);
-        // displayDay(arrOfDays);
-        displayDayTemp(arrOfDays);
+
+        // displayDayTemp(arrOfDays);
         // console.log(formattedDate);
         arrOfDays.forEach(function (day) {
             var obj = new Object({
@@ -81,26 +113,7 @@ $(document).ready(function () {
         })
     }
 
-    /**
-     <!--                    -->
-     <!--                    <h5 class="card-title text-center" id="name1">Today's Weather Report</h5>-->
-     <!--                    <p class="card-text temp text-center">Info on today's weather</p>-->
-     <!--                </div>-->
-     <!--            </div>-->
-     <!--        </div>-->
-     */
 
-
-
-    function displayDayTemp(arr) {
-        arr.forEach(function (day) {
-            // console.log(day.temp.day);
-            name.html(`<h5 class = "card-title text-center">${day.temp.day}</h5>`);
-        })
-        return arr;
-    }
-
-//    class="card-title text-center"
 
 //    MAP(s) BELOW
     const map = new mapboxgl.Map({
@@ -110,15 +123,18 @@ $(document).ready(function () {
         center: [-98.493629, 29.424122]
     });
 
+    /** GEOCODERs below */
     // geocode("San Antonio, TX", MAPBOX_KEY).then(function (result) {
     //     console.log(result);
     //     map.setCenter(result);
     //     map.setZoom(8.7);
     // });
 
-    reverseGeocode({lat: 32.77, lng: -96.79}, MAPBOX_KEY).then(function(results) {
-        console.log(results)
-    })
+    // reverseGeocode({lat: 32.77, lng: -96.79}, MAPBOX_KEY).then(function(results) {
+    //     console.log(results)
+    // })
+
+
 
 
 })
