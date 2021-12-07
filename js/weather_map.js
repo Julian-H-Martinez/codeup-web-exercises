@@ -4,36 +4,10 @@ $(document).ready(function () {
     var temp = $('.temp');
     var listOfDays = $('#listOfDays');
     var newArrayOfDays = [];
-    var searchPts = [];
+    var lngCoord = -98.48527;
+    var latCoord = 29.423017;
 
-    //  CLICK EVENT(s)
-    $("#searchBar").click(function(e){
-        e.preventDefault();
-        var searchValue = $('#userInput').val();
-        // console.log((searchValue))
-        geocode(searchValue, MAPBOX_KEY).then(function (result) {
-            // console.log(result);
-            searchPts.push(result);
-            map.flyTo({
-                //  centered at target
-                center: result,
-                //  zoom level
-                zoom: 9,
-                //  bearing (direction of map)
-                bearing: 0,  //  0 is north
-                //  controlling speed of zoom
-                speed: 0.2,
-                //  change speed at which it zooms out
-                curve: 1,
-                //  easing - not using
-                //  easing: (t) => t,
-                //  animation essential?
-                essential: true,
-            })
-        });
-        console.log(searchPts);
-    })
-    console.log(searchPts);
+    // var searchPts = [];
 
     mapboxgl.accessToken = MAPBOX_KEY;
 
@@ -56,8 +30,8 @@ $(document).ready(function () {
 
     $.get("http://api.openweathermap.org/data/2.5/onecall", {
         APPID: WEATHER_KEY,
-        lat: 29.423017,
-        lon: -98.48527,
+        lat: latCoord,
+        lon: lngCoord,
         units: "imperial"
     }).done(function (data) {
         var currentDayTemp = data.current.temp;
@@ -75,9 +49,9 @@ $(document).ready(function () {
         var weatherIcon = data.current.weather[0].icon;
         // console.log(weatherIcon);
 
-        // console.log('The entire response:', data);
-        // console.log('Diving in - here is current information: ', data.current);
-        // console.log('A step further - information for tomorrow: ', data.daily[1]);
+        console.log('The entire response:', data);
+        console.log('Diving in - here is current information: ', data.current);
+        console.log('A step further - information for tomorrow: ', data.daily[1]);
 
         $("#weather_icon").attr("src", `http://openweathermap.org/img/w/${weatherIcon}.png`);
 
@@ -134,6 +108,88 @@ $(document).ready(function () {
     //     console.log(results)
     // })
 
+
+    //  CLICK EVENT(s)
+    $("#searchBar").click(function(e){
+
+        e.preventDefault();
+        var searchValue = $('#userInput').val();
+        // console.log((searchValue))
+        geocode(searchValue, MAPBOX_KEY).then(function (result) {
+            console.log(result);
+            lngCoord = result[0];
+            console.log(lngCoord);
+            latCoord = result[1];
+            console.log(latCoord);
+            map.flyTo({
+                //  centered at target
+                center: result,
+                //  zoom level
+                zoom: 9,
+                //  bearing (direction of map)
+                bearing: 0,  //  0 is north
+                //  controlling speed of zoom
+                speed: 0.2,
+                //  change speed at which it zooms out
+                curve: 1,
+                //  easing - not using
+                //  easing: (t) => t,
+                //  animation essential?
+                essential: true,
+            })
+        });
+        console.log(lngCoord);
+        console.log(latCoord);
+
+        listOfDays.empty();
+
+        $.get("http://api.openweathermap.org/data/2.5/onecall", {
+            APPID: WEATHER_KEY,
+            lat: latCoord,
+            lon: lngCoord,
+            units: "imperial"
+        }).done(function (data) {
+            var currentDayTemp = data.current.temp;
+            // console.log(currentDayTemp);
+
+            var arrOfDays = data.daily;
+            // console.log(arrOfDays);
+
+            var formattedDate = new Date(arrOfDays[2].dt * 1000)
+            // console.log(formattedDate);
+
+            // var singleDayTemp = arrOfDays[3].temp.day;
+            // console.log(singleDayTemp);
+
+            var weatherIcon = data.current.weather[0].icon;
+            // console.log(weatherIcon);
+
+            console.log('The entire response:', data);
+            console.log('Diving in - here is current information: ', data.current);
+            console.log('A step further - information for tomorrow: ', data.daily[1]);
+
+            $("#weather_icon").attr("src", `http://openweathermap.org/img/w/${weatherIcon}.png`);
+
+            // displayDayTemp(arrOfDays);
+            // console.log(formattedDate);
+            arrOfDays.forEach(function (day) {
+                var obj = new Object({
+                    'temp': day.temp.day,
+                    'date': day.dt,
+                    'icon': weatherIcon
+                })
+                // console.log(obj);
+                newArrayOfDays.push(obj)
+            })
+            // console.log(newArrayOfDays);
+            displayDays(newArrayOfDays)
+        });
+
+
+
+
+
+    })
 
 
 
