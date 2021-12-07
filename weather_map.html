@@ -51,14 +51,16 @@
     </div>
 </header>
 
-<main class="container-fluid d-flex" id="listOfDays">
-
-
-
-
-</main>
+<main class="container-fluid d-flex" id="listOfDays"></main>
 <section class="container-fluid">
     <div class="mb-2 rounded mx-auto d-block" id='map' style='width: 100%; height: 300px;'></div>
+</section>
+<!--adding section for the geo search-->
+<section class="container-fluid search">
+    <form class="d-flex">
+        <input id="userInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button id="searchBar" class="btn btn-outline-success" type="submit">Search</button>
+    </form>
 </section>
 
 <!--/////////////////////////////////////////////// MAPBOX JS ///////////////////////////////////////////////-->
@@ -81,6 +83,7 @@
 
 <!--/////////////////////////////////////////////// CUSTOM JS ///////////////////////////////////////////////-->
 <script src="js/weather_map.js"></script>
-
+<!--/////////////////////////////////////////////// GEOCODER JS ///////////////////////////////////////////////-->
+<script src="js/mapbox-geocoder-utils.js"></script>
 </body>
 </html>
