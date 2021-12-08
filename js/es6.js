@@ -63,13 +63,9 @@ let names = [];
 // users.forEach(function(user) {
 //   return names.push(user.name);
 // });
-users.forEach(user = (userEmail) => {
-  return emails.push(userEmail.email);
-});
+users.forEach(userEmail => emails.push(userEmail.email));
 // console.log(emails);
-users.forEach(user = (userName) => {
-  return names.push(userName.name);
-});
+users.forEach(userName => names.push(userName.name));
 // console.log(names);
 
 // TODO: replace `var` with `let` in the following declaration
