@@ -46,4 +46,16 @@ $(document).ready(()=>{
 /** Use .map to create an array of strings where each element is a user's email address */
     let userEmails = users.map(user => user.email);
     console.log(userEmails);
+
+/**
+ * Use .reduce to get the total years of experience from the list of users.
+ * Once you get the total of years you can use the result to calculate the average.
+ */
+    let yearsOfExp = users.map(user => user.yearsOfExperience);
+    console.log(yearsOfExp);
+    let totalYrsExp = yearsOfExp.reduce((previousValue, currentValue)=>previousValue + currentValue)
+    console.log(totalYrsExp);
+    let avg = totalYrsExp/yearsOfExp.length;
+    console.log(avg);
+
 })
