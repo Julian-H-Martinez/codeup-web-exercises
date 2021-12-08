@@ -1,5 +1,6 @@
 "use strict";
 $(document).ready(()=>{
+    console.log("yep i'm working just fine!");
     /** USERS FROM EXERCISE */
     const users = [
         {
@@ -38,7 +39,8 @@ $(document).ready(()=>{
             yearsOfExperience: 9
         }
     ];
-
-
+/** Use .filter to create an array of user objects where each user object has at least 3 languages in the languages array. */
+    let threeLang = users.filter(user => user.languages.length >= 3)
+    console.log(threeLang);
 
 })
