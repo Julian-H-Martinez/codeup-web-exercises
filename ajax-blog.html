@@ -5,26 +5,21 @@
     <title>AJAX BLOG</title>
 
 <!--LINKS TO FOLLOW-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"-->
+<!--          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">-->
 <!--STYLES TO FOLLOW-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
-<body>
-<div id="posts">
-<!--    <div class="container">-->
-<!--        <div class="row">-->
-<!--            <div class="col-sm">-->
-<!--                One of three columns-->
-<!--            </div>-->
-<!--            <div class="col-sm">-->
-<!--                One of three columns-->
-<!--            </div>-->
-<!--            <div class="col-sm">-->
-<!--                One of three columns-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-</div>
+
+<body class="p-2">
+
+<header class="container-fluid">
+    <h1 class="text-center">AJAX Blog Posts</h1>
+</header>
+
+<main class="container-fluid">
+    <div id="posts" class="row row-cols-1 row-cols-md-3"></div>
+</main>
 
 <!--SCRIPTS TO FOLLOW-->
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
@@ -45,7 +40,17 @@
         function onSuccess(data){
             data.forEach(function (item) {
                 // console.log(item);
-                $("#posts").append(`<p>${item.title} </p><p>${item.content}</p><p>${item.categories}</p>`)
+                // $("#posts").append(`<p>${item.title} </p><p>${item.content}</p><p>${item.categories}</p>`)
+                $("#posts").append(`
+                <div class="col mb-4">
+                    <div class="card card-heighth">
+                        <div class="card-body">
+                            <h5 class="card-title">${item.title}</h5>
+                            <p class="card-text">${item.content}</p>
+                        </div>
+                    </div>
+                </div>
+                `)
             })
         }
 
@@ -55,3 +60,17 @@
 </script>
 </body>
 </html>
+
+<!--
+<div class="row row-cols-1 row-cols-md-3">
+  <div class="col mb-4">
+    <div class="card h-100">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+</div>
+-->
