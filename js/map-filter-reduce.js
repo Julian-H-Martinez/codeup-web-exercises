@@ -59,8 +59,15 @@ $(document).ready(()=>{
     console.log(avg);
 
 /** Use .reduce to get the longest email from the list of users. */
-    let emailLength = userEmails[0].length;
-    console.log(emailLength);
+    let longestEmail = users.reduce((previousValue, currentValue)=>{
+        // console.log(previousValue.email.length);
+        if(previousValue.email.length > currentValue.email.length){
+            return previousValue;
+        }else{
+            return currentValue;
+        }
+})
+    console.log(longestEmail);
 
 
     // var ;
