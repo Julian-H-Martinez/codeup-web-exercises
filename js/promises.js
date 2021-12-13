@@ -1,7 +1,8 @@
 "use strict";
 (()=>{
+const gitHubUsers = fetch('https://api.github.com/users');
     console.log('yep i work');
-    fetch('https://api.github.com/users', {headers: {'Authorization': PROMISE_KEY}})
+    fetch(gitHubUsers, {headers: {'Authorization': PROMISE_KEY}})
         .then(response => {response.json()
         .then(users => {
             users.forEach(user =>{
@@ -12,7 +13,6 @@
         .catch(error=> console.log(error));
 
 })()
-const gitHubUsers = fetch('https://api.github.com/users');
 
 
 
