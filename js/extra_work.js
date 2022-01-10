@@ -180,7 +180,7 @@
     }
 
     //////////////////////////////---Narcissistic Numbers---/////////////////////////////////////
-
+//  cited: https://www.tutorialspoint.com/javascript-narcissistic-number
     const isNarcissistic = (num) => {
         let m = 1, count = 0;
         while(num / m > 1){
