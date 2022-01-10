@@ -178,6 +178,25 @@
     function isMultipleOfFive(input){
         return parseFloat(input) % 5 == 0;
     }
+
+    //////////////////////////////---Narcissistic Numbers---/////////////////////////////////////
+
+    const isNarcissistic = (num) => {
+        let m = 1, count = 0;
+        while(num / m > 1){
+            m *= 10;
+            count++;
+        };
+        let sum = 0, temp = num;
+        while(temp){
+            sum += Math.pow(temp % 10, count);
+            temp = Math.floor(temp / 10);
+        };
+        return sum === num;
+    };
+    console.log(isNarcissistic(153));
+
+
     // console.log(isMultipleOfFive(155));
     // console.log(isMultipleOfFive("155"));
     // console.log(isMultipleOfFive(18));
@@ -199,4 +218,5 @@
     // console.log(isOdd(3));
     // console.log(isOdd(36));
     // console.log(isOdd(23));
+    // console.log(isNarcissisticNum(153));
 })();
