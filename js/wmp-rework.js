@@ -62,6 +62,8 @@ $(document).ready(function (){
     // });
 
     // //  Format 3
+    //  easiest way to manipulate AJAX options
+    //  passing js object as 2nd argument
     // $.ajax("http://api.openweathermap.org/data/2.5/weather", {
     //     data: {
     //         APPID: WEATHER_KEY,
