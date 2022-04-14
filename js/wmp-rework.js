@@ -49,6 +49,54 @@ $(document).ready(function (){
         console.log('A step further - information for tomorrow: ', data.daily[1]);
     });
 
+    // $.get('https://pokeapi.co/api/v2/pokemon/charmander').done(function(data){
+    //     console.log(data);
+    // })
+
+    // $.ajax('https://pokeapi.co/api/v2/pokemon/charmander').done(function(data, status, jqXhr){
+    //     alert("AJAX call completed successfully!");
+    //     console.log("Request status: " + status);
+    //     console.log("Data returned from server: ");
+    //     console.log(data);
+    //     console.log("This is jqXhr: ", jqXhr);
+    // })
+
+    // $.ajax('https://pokeapi.co/api/v2/pokemon/charmander')
+    //     .done(function(data, status, jqXhr){
+    //         alert("Everything went great! Check out the server's response in the console.");
+    //         console.log(data);
+    //     })
+    //     .fail(function (jqXhr, status, error){
+    //         alert("There was an error! Check the console for details");
+    //         //  custom error message
+    //         // let errMessage = "No known address!"
+    //         console.log("Response status: " + status);
+    //         // console.log("Error object: " + errMessage);
+    //         console.log("Error object: " + error);
+    //     })
+    //     .always(function(){
+    //         alert("This function always runs!");
+    //     })
+    function onSuccess(data, status, jqXhr){
+        alert("Everything went great! Check out the server's response in the console!!!");
+        console.log(data);
+    }
+    function onFail(jqXhr, status, error){
+        alert("There was an error! Check the console for details");
+        let errMessage = "Please check url. Thanks!";
+        console.log("Response status: " + status);
+        console.log("Error object: " + error);
+        console.log(errMessage);
+    }
+    function stopLoadingAnimation(){
+        alert("Load has been complete! Animation is donzo!!!");
+        console.log("Successfully uploaded");
+    }
+    $.ajax("https://pokeapi.co/api/v2/pokemon/charmnder")
+        .done(onSuccess)
+        .fail(onFail)
+        .always(stopLoadingAnimation);
+
     // //  Format 2
     // $.ajax({
     //     url: "http://api.openweathermap.org/data/2.5/weather",
