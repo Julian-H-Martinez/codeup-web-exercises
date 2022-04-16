@@ -37,18 +37,38 @@
     (function () {
         "use strict";
         // TODO: Create an AJAX GET request for the file under data/inventory.json
-        var storeInventory = $.ajax("data/inventory.json");
-        // console.log(storeInventory);
+        let storeInventory = $.ajax("data/inventory.json");     //  variable for get request
+
+        //  function for when data has been successfully loaded
         function onSuccess(data){
-            data.forEach(function (item) {
-                // console.log(item);
-                $("#insertProducts").append(`<tr> <td>${item.title} </td> <td>${item.quantity} </td> <td>${item.price} </td> <td>${item.categories}</td> </tr>`)
+            let displayItem = '';
+            data.forEach(function (item){
+                console.log(item);
+                displayItem += showItem(item);
             })
+            $('#insertProducts').append(displayItem)
+        }
+
+        //  function for when data has failed to load
+        function onFail(data){
+            alert("Your request has failed at this time. \nPlease double check and try again");
+        }
+
+        //  function to display item from inventory in the html
+        //  cleaner code this way IMO
+        function showItem(item){
+            return '<tr> <td>'
+                + item.title
+                + '</td> <td>'
+                + item.quantity
+                + '</td><td>'
+                + item.categories
+                + '</td></tr>';
         }
 
         // TODO: Take the data from inventory.json and append it to the products table
         //  refactored to have function above and will call when needed below.
-        storeInventory.done(onSuccess)
+        storeInventory.done(onSuccess).fail(onFail);
 
 
         //  trying to figure a way to have page refresh without reloading
